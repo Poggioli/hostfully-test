@@ -1,12 +1,5 @@
+import { Room } from '@/service/Room';
 import { create } from 'zustand'
-
-type Room = {
-    id: string;
-    name: string;
-    description: string;
-    pricePerDay: number;
-    photos: string[];
-}
 
 type Booking = {
     id: string;
@@ -26,7 +19,7 @@ type Store = {
     addBooking: (booking: Booking, id?: string) => void;
 }
 
-const useStore = create<Store>((set) => ({
+export const useStore = create<Store>((set) => ({
     rooms: [],
     bookings: [],
     setRooms: (rooms: Room[]) => set(() => ({ rooms })),
