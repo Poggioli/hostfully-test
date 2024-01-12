@@ -1,22 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useStore } from "@/lib/store";
 import { useQuery } from "react-query";
-import axiosClient from "../api";
 import { Room } from ".";
+import axiosClient from "../api";
 
 const keys = {
-    getRooms: ["rooms"]
+  getRooms: ["rooms"],
 };
 
-export function useGetRooms(options: any) {
-    return useQuery({
-        queryFn: async () => {
-            try {
-                const res = await axiosClient.get<Room[]>('/rooms');
-                return res;
-            } catch {
-                return null;
-            }
-        },
-        queryKey: keys.getRooms,
-        ...options
-    });
+export function useGetRooms(options?: any) {
+  const { setRooms } = useStore();
+
+  return useQuery<Room[]>(keys.getRooms, {
+    queryFn: async () => {
+      const res = await axiosClient.get<Room[]>("/rooms");
+      return res.data;
+    },
+    onSuccess(data: any) {
+      setRooms(data);
+    },
+    ...options,
+  });
 }
