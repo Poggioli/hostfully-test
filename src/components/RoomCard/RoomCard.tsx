@@ -1,12 +1,19 @@
 import { Room } from "@/service/Room"
-import { FC } from "react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card"
-import { Button } from "../ui/button"
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
+import { FC } from "react"
+import { useBookingDrawer } from "../BookingDrawer"
+import { Button } from "../ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card"
 
 export type RoomCardProps = Room
 
-const RoomCard: FC<RoomCardProps> = ({ name, description, pricePerDay, photos }) => {
+const RoomCard: FC<RoomCardProps> = ({ name, description, pricePerDay, photos, id }) => {
+
+  const { onOpen: onOpenBookingDrawer } = useBookingDrawer()
+
+  const onSchedule = () => {
+    onOpenBookingDrawer(id)
+  }
 
   return (
     <Card className="w-full">
@@ -32,7 +39,7 @@ const RoomCard: FC<RoomCardProps> = ({ name, description, pricePerDay, photos })
       </CardContent>
 
       <CardFooter className="flex justify-end">
-        <Button>Schedule</Button>
+        <Button onClick={onSchedule}>Schedule</Button>
       </CardFooter>
     </Card>
   )
