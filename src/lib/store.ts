@@ -1,39 +1,32 @@
-import { Room } from '@/service/Room';
-import { create } from 'zustand'
-
-type Booking = {
-    id: string;
-    roomId: string;
-    totalPrice: number;
-    startDate: Date;
-    endDate: Date;
-}
+import { Booking } from "@/service/Booking";
+import { Room } from "@/service/Room";
+import { create } from "zustand";
 
 type Store = {
-    rooms: Room[];
-    bookings: Booking[];
-    setBookings: (bookings: Booking[]) => void;
-    setRooms: (rooms: Room[]) => void;
-    editBooking: (id: string, booking: Booking) => void;
-    deleteBooking: (id: string) => void;
-    addBooking: (booking: Booking, id?: string) => void;
-}
+  rooms: Room[];
+  bookings: Booking[];
+  setBookings: (bookings: Booking[]) => void;
+  setRooms: (rooms: Room[]) => void;
+  editBooking: (booking: Booking) => void;
+  deleteBooking: (id: string) => void;
+  addBooking: (booking: Booking) => void;
+};
 
 export const useStore = create<Store>((set) => ({
-    rooms: [],
-    bookings: [],
-    setRooms: (rooms: Room[]) => set(() => ({ rooms })),
-    setBookings: (bookings: Booking[]) => set(() => ({ bookings})),
-    editBooking: (id: string, booking: Booking) => set(({ bookings }) => {
-        const newBookings = bookings.map((b) => id === b.id ? booking : b);
-        return {
-            bookings: newBookings
-        }
-    }),
-    deleteBooking: (id: string) => set(({ bookings }) => ({
-        bookings: bookings.filter((b) => b.id !== id)
+  rooms: [],
+  bookings: [],
+  setRooms: (rooms: Room[]) => set(() => ({ rooms })),
+  setBookings: (bookings: Booking[]) => set(() => ({ bookings })),
+  editBooking: (booking: Booking) =>
+    set(({ bookings }) => ({
+      bookings: bookings.map((b) => (booking.id === b.id ? booking : b)),
     })),
-    addBooking: (booking: Booking) => set(({ bookings }) => ({
-        bookings: [...bookings, booking]
+  deleteBooking: (id: string) =>
+    set(({ bookings }) => ({
+      bookings: bookings.filter((b) => b.id !== id),
     })),
-}))
+  addBooking: (booking: Booking) =>
+    set(({ bookings }) => ({
+      bookings: [...bookings, booking],
+    })),
+}));
