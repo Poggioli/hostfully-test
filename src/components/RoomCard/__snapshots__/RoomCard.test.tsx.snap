@@ -1,0 +1,66 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RoomCard > GIVEN a RoomCard
+      WHEN render
+      THEN should match with snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="rounded-xl border bg-card text-card-foreground shadow w-full"
+    >
+      <div
+        data-radix-aspect-ratio-wrapper=""
+        style="position: relative; width: 100%; padding-bottom: 56.25%;"
+      >
+        <div
+          class="rounded overflow-hidden"
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"
+        >
+          <img
+            alt="Photo of House with Wi-Fi"
+            class="rounded object-cover"
+            src="https://images.unsplash.com/photo-1704211825599-9e2ec712f561"
+          />
+        </div>
+      </div>
+      <div
+        class="space-y-1.5 p-6 flex flex-col gap-4 pb-3"
+      >
+        <h3
+          class="font-semibold leading-none tracking-tight"
+        >
+          House with Wi-Fi
+        </h3>
+        <p
+          class="text-sm text-muted-foreground line-clamp-3"
+        >
+          Is located just 1 hour from the center of SP, easy access via Regis Bitencourt, an all paved route
+        </p>
+      </div>
+      <div
+        class="p-6 pt-0 flex justify-end pb-4"
+      >
+        <span>
+          <span
+            class="text-sm font-bold"
+          >
+            $
+            900
+          </span>
+           
+          night
+        </span>
+      </div>
+      <div
+        class="items-center p-6 pt-0 flex justify-end"
+      >
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2"
+        >
+          Schedule
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
