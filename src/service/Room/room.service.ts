@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useStore } from "@/lib/store";
+import axiosClient from "@/service/api";
 import { useQuery } from "react-query";
-import { Room } from ".";
-import axiosClient from "../api";
+import { Room } from "./room.type";
 
 const keys = {
   getRooms: ["rooms"],

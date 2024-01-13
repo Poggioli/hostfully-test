@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useStore } from "@/lib/store";
+import axiosClient from "@/service/api";
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { Booking } from ".";
-import axiosClient from "../api";
+import { Booking } from "./booking.types";
 
 const keys = {
   getBookings: ["bookings"],
@@ -41,7 +41,7 @@ export function useDeleteBooking(options?: any) {
       deleteBooking(id);
       return { previousBookings };
     },
-    onError: (err, newTodo, context: any) => {
+    onError: (err, variables, context: any) => {
       const booking: Booking = context.previousBookings as Booking;
       addBooking(booking);
     },
@@ -55,7 +55,7 @@ export function useDeleteBooking(options?: any) {
 export function useEditBooking(options?: any) {
   const queryClient = useQueryClient();
   const { editBooking } = useStore();
-  
+
   return useMutation(keys.updateBookings, {
     mutationFn: async (booking: Booking) => {
       await axiosClient.put(`/bookings/${booking.id}`, booking);
@@ -71,7 +71,7 @@ export function useEditBooking(options?: any) {
         previousBooking: previousBookings.find((b) => b.id === booking.id),
       };
     },
-    onError: (err, newTodo, context: any) => {
+    onError: (err, variables, context: any) => {
       const booking: Booking = context.previousBooking as Booking;
       editBooking(booking);
     },
@@ -99,7 +99,7 @@ export function usePostBooking(options?: any) {
       addBooking(booking);
       return { previousBookings };
     },
-    onError: (err, newTodo, context: any) => {
+    onError: (err, variables, context: any) => {
       const booking: Booking = context.previousBooking as Booking;
       deleteBooking(booking.id);
     },
