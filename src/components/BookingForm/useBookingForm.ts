@@ -12,8 +12,9 @@ import {
 } from "date-fns";
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
 import { v4 as uuidv4 } from "uuid";
+import * as z from "zod";
+import { useBookingDrawer } from "../BookingDrawer";
 
 const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
@@ -37,7 +38,7 @@ const bookingSchema = z
       .number({
         required_error: "This field is required",
         coerce: true,
-        invalid_type_error: "This field is required"
+        invalid_type_error: "This field is required",
       })
       .min(1),
   })
@@ -69,6 +70,7 @@ type UseBookingFormProps = {
 };
 
 export const useBookingForm = (options: UseBookingFormProps) => {
+  const { onClose } = useBookingDrawer();
   const { getBookingsByIdRoom } = useStore();
   const { mutate } = usePostBooking();
   const bookings = getBookingsByIdRoom(options.room.id);
@@ -77,18 +79,23 @@ export const useBookingForm = (options: UseBookingFormProps) => {
     resolver: zodResolver(bookingSchema),
   });
 
-  const unavailableDates: Date[] = bookings.reduce((prev: Date[], curr: Booking) => {
-    const datesInInterval = eachDayOfInterval({
-      start: curr.checkIn,
-      end: curr.checkOut
-    });
-    return [...prev, ...datesInInterval]
-  }, []);
+  const unavailableDates: Date[] = bookings.reduce(
+    (prev: Date[], curr: Booking) => {
+      const datesInInterval = eachDayOfInterval({
+        start: curr.checkIn,
+        end: curr.checkOut,
+      });
+      return [...prev, ...datesInInterval];
+    },
+    []
+  );
 
   const bookingDays: number = useMemo(() => {
-    return Math.abs(
-      differenceInCalendarDays(form.watch("checkIn"), form.watch("checkOut"))
-    ) || 0;
+    return (
+      Math.abs(
+        differenceInCalendarDays(form.watch("checkIn"), form.watch("checkOut"))
+      ) || 0
+    );
   }, [form.watch("checkIn"), form.watch("checkOut")]);
 
   const totalPriceGuest: number = useMemo(() => {
@@ -126,6 +133,8 @@ export const useBookingForm = (options: UseBookingFormProps) => {
       totalPrice: totalPrice,
       ...data,
     });
+
+    onClose();
   };
 
   return {
@@ -135,6 +144,6 @@ export const useBookingForm = (options: UseBookingFormProps) => {
     totalPriceDay,
     bookingDays,
     totalPrice,
-    unavailableDates
+    unavailableDates,
   };
 };

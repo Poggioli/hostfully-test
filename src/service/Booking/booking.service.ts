@@ -30,56 +30,62 @@ export function useDeleteBooking(options?: any) {
   const queryClient = useQueryClient();
   const { deleteBooking, addBooking } = useStore();
 
-  return useMutation(keys.deleteBookings, {
-    mutationFn: async (id: string, booking?: Booking) => {
+  return useMutation(
+    keys.deleteBookings,
+    async (id: string, booking?: Booking) => {
       await axiosClient.delete(`/bookings/${id}`);
       return booking;
     },
-    onMutate: async (id: string) => {
-      await queryClient.cancelQueries({ queryKey: keys.deleteBookings });
-      const previousBookings = queryClient.getQueryData(keys.getBookings);
-      deleteBooking(id);
-      return { previousBookings };
-    },
-    onError: (err, variables, context: any) => {
-      const booking: Booking = context.previousBookings as Booking;
-      addBooking(booking);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: keys.getBookings });
-    },
-    ...options,
-  });
+    {
+      onMutate: async (id: string) => {
+        await queryClient.cancelQueries({ queryKey: keys.deleteBookings });
+        const previousBookings = queryClient.getQueryData(keys.getBookings);
+        deleteBooking(id);
+        return { previousBookings };
+      },
+      onError: (err, variables, context: any) => {
+        const booking: Booking = context.previousBookings as Booking;
+        addBooking(booking);
+      },
+      onSettled: () => {
+        queryClient.invalidateQueries({ queryKey: keys.getBookings });
+      },
+      ...options,
+    }
+  );
 }
 
 export function useEditBooking(options?: any) {
   const queryClient = useQueryClient();
   const { editBooking } = useStore();
 
-  return useMutation(keys.updateBookings, {
-    mutationFn: async (booking: Booking) => {
+  return useMutation(
+    keys.updateBookings,
+    async (booking: Booking) => {
       await axiosClient.put(`/bookings/${booking.id}`, booking);
       return booking;
     },
-    onMutate: async (booking: Booking) => {
-      await queryClient.cancelQueries({ queryKey: keys.updateBookings });
-      const previousBookings = queryClient.getQueryData<Booking[]>(
-        keys.getBookings
-      ) as Booking[];
-      editBooking(booking);
-      return {
-        previousBooking: previousBookings.find((b) => b.id === booking.id),
-      };
-    },
-    onError: (err, variables, context: any) => {
-      const booking: Booking = context.previousBooking as Booking;
-      editBooking(booking);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: keys.getBookings });
-    },
-    ...options,
-  });
+    {
+      onMutate: async (booking: Booking) => {
+        await queryClient.cancelQueries({ queryKey: keys.updateBookings });
+        const previousBookings = queryClient.getQueryData<Booking[]>(
+          keys.getBookings
+        ) as Booking[];
+        editBooking(booking);
+        return {
+          previousBooking: previousBookings.find((b) => b.id === booking.id),
+        };
+      },
+      onError: (err, variables, context: any) => {
+        const booking: Booking = context.previousBooking as Booking;
+        editBooking(booking);
+      },
+      onSettled: () => {
+        queryClient.invalidateQueries({ queryKey: keys.getBookings });
+      },
+      ...options,
+    }
+  );
 }
 
 export function usePostBooking(options?: any) {

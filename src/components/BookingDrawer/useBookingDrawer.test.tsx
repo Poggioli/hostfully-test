@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import { MockedFunction, describe, expect, it, vi } from "vitest";
-import { useBookingDrawer } from ".";
+import { useBookingDrawer } from "./useBookingDrawer";
 import { MemoryRouter } from "react-router-dom";
 import { useStore } from "@/lib/store";
 

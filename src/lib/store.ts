@@ -17,12 +17,30 @@ type Store = {
 export const useStore = create<Store>((set, get) => ({
   rooms: [],
   bookings: [],
-  setRooms: (rooms: Room[]) => set(() => ({ rooms })),
+  setRooms: (rooms: Room[]) =>
+    set(() => ({
+      rooms,
+      bookings: get().bookings.map((booking) => {
+        const room = rooms.find((room) => room.id === booking.roomId);
+        return {
+          ...booking,
+          roomName: room?.name || "-",
+        };
+      }),
+    })),
   findRoom: (id: string) => {
     const { rooms } = get();
     return rooms.find((room) => room.id === id);
   },
-  setBookings: (bookings: Booking[]) => set(() => ({ bookings })),
+  setBookings: (bookings: Booking[]) => set(() => ({
+    bookings: bookings.map((booking) => {
+      const room = get().rooms.find((room) => room.id === booking.roomId);
+      return {
+        ...booking,
+        roomName: room?.name || "-",
+      };
+    })
+  })),
   editBooking: (booking: Booking) =>
     set(({ bookings }) => ({
       bookings: bookings.map((b) => (booking.id === b.id ? booking : b)),
@@ -30,12 +48,12 @@ export const useStore = create<Store>((set, get) => ({
   deleteBooking: (id: string) => {
     set(({ bookings }) => ({
       bookings: bookings.filter((b) => b.id !== id),
-    }))
+    }));
   },
   addBooking: (booking: Booking) => {
     return set(({ bookings }) => ({
       bookings: [...bookings, booking],
-    }))
+    }));
   },
   getBookingsByIdRoom: (id: string): Booking[] => {
     return get().bookings.filter((booking) => booking.roomId === id);

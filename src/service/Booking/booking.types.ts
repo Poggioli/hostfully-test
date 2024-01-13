@@ -5,4 +5,5 @@ export type Booking = {
   checkIn: Date;
   checkOut: Date;
   quantityGuests: number;
+  roomName?: string;
 }

@@ -4,10 +4,12 @@ import { Router } from "./pages/Router"
 import { useNavigate } from "react-router-dom";
 import { BookingDrawer } from "./components/BookingDrawer";
 import { useGetBooking } from "./service/Booking";
+import { useGetRooms } from "./service/Room";
 
 function App() {
 
   useGetBooking();
+  useGetRooms();
   const navigate = useNavigate();
   const [tab, setTab] = useState('rooms');
 

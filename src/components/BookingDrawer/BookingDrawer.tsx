@@ -2,7 +2,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
-import { FC, PropsWithChildren } from "react";
+import { FC } from "react";
 import { useBookingDrawer } from "./useBookingDrawer";
 
 
@@ -24,7 +24,7 @@ const BookingDrawerError: FC<BookingDrawerErrorProps> = ({ onClose }) => {
   )
 }
 
-const BookingDrawer: FC<PropsWithChildren> = () => {
+const BookingDrawer: FC = () => {
   const { onClose, room, openBookingModal } = useBookingDrawer();
 
   const onCloseInOnOpenChange = (value: boolean) => {

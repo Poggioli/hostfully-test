@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
-import { MockedFunction, describe, expect, it, beforeEach } from "vitest";
+import { MockedFunction, describe, expect, it, beforeEach, vi, afterAll } from "vitest";
 import { Rooms } from "./Rooms";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import { QueryClientProvider } from "react-query";
@@ -37,14 +37,16 @@ describe('Rooms', () => {
   ];
 
   beforeEach(() => {
-    (axios.get as MockedFunction<typeof axios.get>).mockClear();
+    vi.restoreAllMocks();
+    vi.clearAllMocks();
+    vi.resetAllMocks();
   })
 
   it(`GIVEN a Rooms page
       WHEN useGetRooms return error
       THEN should show error message`, async () => {
     (axios.get as MockedFunction<typeof axios.get>)
-      .mockRejectedValueOnce(new Error('Async error'))
+      .mockRejectedValue('Async error')
 
     const { getByText } = renderComponent();
 
@@ -63,7 +65,7 @@ describe('Rooms', () => {
       AND useGetRooms return success
       THEN should show the cards`, async () => {
     (axios.get as MockedFunction<typeof axios.get>)
-      .mockRejectedValueOnce(new Error('Async error'))
+      .mockRejectedValueOnce('Async error')
       .mockResolvedValueOnce({
         data: roomsMock,
       });
