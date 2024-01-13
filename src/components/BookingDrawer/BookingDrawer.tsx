@@ -1,8 +1,4 @@
-import { CONSTANTS } from "@/lib/constants";
-import { useStore } from "@/lib/store";
-import { Room } from "@/service/Room";
 import { FC, PropsWithChildren } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "../ui/drawer";
 import { useBookingDrawer } from "./useBookingDrawer";
@@ -27,12 +23,7 @@ const BookingDrawerError: FC<BookingDrawerErrorProps> = ({ onClose }) => {
 }
 
 const BookingDrawer: FC<PropsWithChildren> = () => {
-
-  const [searchParams] = useSearchParams();
-  const { findRoom } = useStore();
-  const { onClose } = useBookingDrawer();
-
-  const room: Room | undefined = findRoom(searchParams.get(CONSTANTS.openBookingModal) || '');
+  const { onClose, room, openBookingModal } = useBookingDrawer();
 
   const onCloseInOnOpenChange = (value: boolean) => {
     if (!value) {
@@ -41,7 +32,7 @@ const BookingDrawer: FC<PropsWithChildren> = () => {
   }
 
   return (
-    <Drawer open={!!searchParams.get(CONSTANTS.openBookingModal)} onOpenChange={onCloseInOnOpenChange}>
+    <Drawer open={!!openBookingModal} onOpenChange={onCloseInOnOpenChange}>
       <DrawerContent>
         <div className="mx-auto max-w-[400px]">
           {!room ? <BookingDrawerError onClose={onClose} /> : (
