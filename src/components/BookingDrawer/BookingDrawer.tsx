@@ -1,6 +1,8 @@
+import { BookingForm } from "@/components/BookingForm";
+import { Button } from "@/components/ui/button";
+import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
+import { Separator } from "@/components/ui/separator";
 import { FC, PropsWithChildren } from "react";
-import { Button } from "../ui/button";
-import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "../ui/drawer";
 import { useBookingDrawer } from "./useBookingDrawer";
 
 
@@ -34,15 +36,25 @@ const BookingDrawer: FC<PropsWithChildren> = () => {
   return (
     <Drawer open={!!openBookingModal} onOpenChange={onCloseInOnOpenChange}>
       <DrawerContent>
-        <div className="mx-auto max-w-[400px]">
+        <div className="mx-auto max-w-[400px] max-h-[100vh] overflow-y-auto">
           {!room ? <BookingDrawerError onClose={onClose} /> : (
             <>
               <DrawerHeader>
                 <DrawerTitle className="text-left">{room.name}</DrawerTitle>
                 <DrawerDescription className={"text-left"}>{room.description}</DrawerDescription>
               </DrawerHeader>
+              <Separator className="h-1" />
+              <div className="p-4">
+                <span className="text-sm mb-4 inline-block">
+                  <span className="text-lg font-semibold">
+                    ${room.pricePerDay}
+                  </span>
+                  {" "}night
+                </span>
+                <BookingForm room={room} />
+              </div>
+              <Separator className="h-1 my-4" />
               <DrawerFooter>
-                <Button>Submit</Button>
                 <Button onClick={onClose} variant="outline">Cancel</Button>
               </DrawerFooter>
             </>
