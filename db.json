@@ -5,6 +5,7 @@
       "name": "House with Wi-Fi",
       "description": "Is located just 1 hour from the center of SP, easy access via Regis Bitencourt, an all paved route",
       "pricePerDay": 900,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1704211825599-9e2ec712f561",
         "https://images.unsplash.com/photo-1696861080288-0cc2f1cd48d5"
@@ -15,16 +16,18 @@
       "name": "Apartment in Consolação",
       "description": "Located on the 20th floor, in the best location in Higienopolis. In front of Mackenzie, PUC-Cogeae, next to Metro Higienopolis, just a few minutes from Shopping Patio Higienopolis, best view and impossible location",
       "pricePerDay": 189,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1518780664697-55e3ad937233",
         "https://images.unsplash.com/photo-1554995207-c18c203602cb"
-    ]
+      ]
     },
     {
       "id": "e74ee496-d80a-42c9-8f59-e5db567b4626",
       "name": "Flat in Brazil",
       "description": "Beautiful studio in the center of SP, in the Setin Downtown São Luis building, close to the Anhangabaú metro, new and well located apartment, with all the facilities that the Consolação neighborhood can offer",
       "pricePerDay": 150,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1564013799919-ab600027ffc6",
         "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83"
@@ -35,6 +38,7 @@
       "name": "House in Santo André, Brazil",
       "description": "Bring your best smile and come celebrate with the Perfect Outdoor Setting You've Been Looking For!",
       "pricePerDay": 599,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9"
@@ -45,6 +49,7 @@
       "name": "Mairiporã, Brazil",
       "description": "Family home, Vila Lilo arose from the desire to allow other people to have intense contact with nature away from the rush. We provide everything you need to reconnect with the things that really matter.",
       "pricePerDay": 1200,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1572120360610-d971b9d7767c",
         "https://images.unsplash.com/photo-1576941089067-2de3c901e126"
@@ -55,6 +60,7 @@
       "name": "Cotia, Brazil",
       "description": "Relax with the whole family in this peaceful, very spacious accommodation in an excellent location",
       "pricePerDay": 948,
+      "pricePerGuest": 120,
       "photos": [
         "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc",
         "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09"
@@ -65,6 +71,7 @@
       "name": "Granja Viana, Brazil",
       "description": "23Km from SP, Casa Relax is ideal for family and friends gatherings. Great for strategic planning for your team. Nature, barbecue and heated pool, fun guaranteed even on cold and cloudy days.",
       "pricePerDay": 1500,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1598228723793-52759bba239c",
         "https://plus.unsplash.com/premium_photo-1661876449499-26de7959878f"
@@ -75,6 +82,7 @@
       "name": "Camanducaia, Brazil",
       "description": "Cabana da Mata is an entire wooden construction, inspired by forest cabins in the USA. At an altitude of 1,600 m, the Cabana offers a rustic experience, surrounded by greenery, the sound of birds, and time to rest and enjoy the nature of Mantiqueira.",
       "pricePerDay": 430,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1575517111478-7f6afd0973db",
         "https://images.unsplash.com/photo-1484154218962-a197022b5858"
@@ -85,6 +93,7 @@
       "name": "Angra dos Reis, Brazil",
       "description": "Welcome to paradise at Casa do Didigo! This seaside house offers a unique experience on Ilha Grande, surrounded by native forest and with an exclusive access beach with calm, crystal-clear waters, in total tranquility.",
       "pricePerDay": 2000,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1513584684374-8bab748fbf90",
         "https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb"
@@ -95,6 +104,7 @@
       "name": "Bungalow in Caraiva, Brazil",
       "description": "Charming bungalow on Caraiva beach where you can have the wonderful experience of watching the sun rise over the sea horizon from your bed and waking up with a morning swim.",
       "pricePerDay": 450,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1448630360428-65456885c650",
         "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"
@@ -105,6 +115,7 @@
       "name": "House in Praia da Pipa, Brazil",
       "description": "Vila Amarela is a space designed and created by residents who love Pipa. It is a mini condominium with 5 temporary rental houses and a pool and barbecue area.",
       "pricePerDay": 440,
+      "pricePerGuest": 120,
       "photos": [
         "https://images.unsplash.com/photo-1582063289852-62e3ba2747f8",
         "https://plus.unsplash.com/premium_photo-1663091687045-d108c7fb83e4"
