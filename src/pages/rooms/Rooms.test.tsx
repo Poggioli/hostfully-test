@@ -1,109 +1,109 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
-import { describe, expect, it, vi } from "vitest";
+import { MockedFunction, describe, expect, it, beforeEach } from "vitest";
 import { Rooms } from "./Rooms";
-import { fireEvent, render } from "@testing-library/react";
-import { QueryClient, QueryClientProvider } from "react-query";
-
-vi.mock('axios');
-const queryClient = new QueryClient()
+import { fireEvent, render, waitFor } from "@testing-library/react";
+import { QueryClientProvider } from "react-query";
+import { BrowserRouter } from "react-router-dom";
+import { queryClientMock } from '../../../setupTest';
 
 describe('Rooms', () => {
+
+  const renderComponent = () => {
+    return render(
+      <BrowserRouter>
+        <QueryClientProvider client={queryClientMock}>
+          <Rooms />
+        </QueryClientProvider>
+      </BrowserRouter>
+    )
+  };
+
+  const roomsMock = [
+    {
+      id: "82c67959-a414-4470-b26b-ba4261cfe866",
+      name: "Room name 1",
+      description: "Room description 1",
+      pricePerDay: 100,
+      photos: [""]
+    },
+    {
+      id: "82c67959-a414-4470-b26b-ba4261cfe867",
+      name: "Room name 2",
+      description: "Room description 2",
+      pricePerDay: 200,
+      photos: [""]
+    }
+  ];
+
+  beforeEach(() => {
+    (axios.get as MockedFunction<typeof axios.get>).mockClear();
+  })
+
   it(`GIVEN a Rooms page
       WHEN useGetRooms return error
-      THEN should show error msg`, () => {
-    vi.spyOn(axios, 'get').mockRejectedValueOnce(new Error('Async error'));
-    const { getByText } = render(
-      <QueryClientProvider client={queryClient}>
-        <Rooms />
-      </QueryClientProvider>
-    );
+      THEN should show error message`, async () => {
+    (axios.get as MockedFunction<typeof axios.get>)
+      .mockRejectedValueOnce(new Error('Async error'))
 
-    const errorTitle = getByText('Ops, something went wrong...');
-    const errorButton = getByText('Try again');
+    const { getByText } = renderComponent();
 
-    expect(errorTitle).toBeDefined();
-    expect(errorButton).toBeDefined();
+    await waitFor(() => {
+      const errorTitle = getByText('Ops, something went wrong...');
+      const errorButton = getByText('Try again');
+
+      expect(errorTitle).toBeDefined();
+      expect(errorButton).toBeDefined();
+    })
   });
 
   it(`GIVEN a Rooms page
       AND useGetRooms return error
       WHEN user retry
       AND useGetRooms return success
-      THEN should show the cards`, () => {
-    vi.spyOn(axios, 'get').mockRejectedValueOnce(new Error('Async error'));
-    const { getByText } = render(
-      <QueryClientProvider client={queryClient}>
-        <Rooms />
-      </QueryClientProvider>
-    );
+      THEN should show the cards`, async () => {
+    (axios.get as MockedFunction<typeof axios.get>)
+      .mockRejectedValueOnce(new Error('Async error'))
+      .mockResolvedValueOnce({
+        data: roomsMock,
+      });
+    const { getByText } = renderComponent();
 
-    const errorTitle = getByText('Ops, something went wrong...');
-    const errorButton = getByText('Try again');
+    await waitFor(() => {
+      const errorTitle = getByText('Ops, something went wrong...');
+      const errorButton = getByText('Try again');
 
-    expect(errorTitle).toBeDefined();
-    expect(errorButton).toBeDefined();
-
-    vi.spyOn(axios, 'get').mockResolvedValueOnce({
-      data: [
-        {
-          id: "82c67959-a414-4470-b26b-ba4261cfe867",
-          name: "Room name 1",
-          description: "Room description 1",
-          pricePerDay: 100,
-          photos: [""]
-        },
-        {
-          id: "82c67959-a414-4470-b26b-ba4261cfe867",
-          name: "Room name 2",
-          description: "Room description 2",
-          pricePerDay: 200,
-          photos: [""]
-        }
-      ]
+      expect(errorTitle).toBeDefined();
+      expect(errorButton).toBeDefined();
     });
 
+
+    const errorButton = getByText('Try again');
     fireEvent.click(errorButton);
 
-    const roomName1 = getByText('Room name 1');
-    const roomName2 = getByText('Room name 2');
+    await waitFor(() => {
+      const roomName1 = getByText('Room name 1');
+      const roomName2 = getByText('Room name 2');
 
-    expect(roomName1).toBeDefined();
-    expect(roomName2).toBeDefined();
-
+      expect(roomName1).toBeDefined();
+      expect(roomName2).toBeDefined();
+    });
   })
 
-  it.only(`GIVEN a Rooms page
+  it(`GIVEN a Rooms page
       WHEN useGetRooms return success
-      THEN should show the cards`, () => {
-    vi.spyOn(axios, 'get').mockResolvedValueOnce({
-      data: [
-        {
-          id: "82c67959-a414-4470-b26b-ba4261cfe867",
-          name: "Room name 1",
-          description: "Room description 1",
-          pricePerDay: 100,
-          photos: [""]
-        },
-        {
-          id: "82c67959-a414-4470-b26b-ba4261cfe867",
-          name: "Room name 2",
-          description: "Room description 2",
-          pricePerDay: 200,
-          photos: [""]
-        }
-      ]
+      THEN should show the cards`, async () => {
+    (axios.get as MockedFunction<typeof axios.get>).mockResolvedValueOnce({
+      data: roomsMock,
     });
-    const { getByText } = render(
-      <QueryClientProvider client={queryClient}>
-        <Rooms />
-      </QueryClientProvider>
-    );
+    const { getByText } = renderComponent();
 
-    const roomName1 = getByText('Room name 1');
-    const roomName2 = getByText('Room name 2');
+    await waitFor(() => {
+      const roomName1 = getByText('Room name 1');
+      const roomName2 = getByText('Room name 2');
 
-    expect(roomName1).toBeDefined();
-    expect(roomName2).toBeDefined();
+      expect(roomName1).toBeDefined();
+      expect(roomName2).toBeDefined();
+    })
   })
 })
