@@ -3,9 +3,11 @@ import { Tabs, TabsList, TabsTrigger } from "./components/ui/tabs"
 import { Router } from "./pages/Router"
 import { useNavigate } from "react-router-dom";
 import { BookingDrawer } from "./components/BookingDrawer";
+import { useGetBooking } from "./service/Booking";
 
 function App() {
 
+  useGetBooking();
   const navigate = useNavigate();
   const [tab, setTab] = useState('rooms');
 

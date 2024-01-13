@@ -9,7 +9,11 @@ import { CalendarIcon } from "lucide-react";
 import { FC } from "react";
 import { useFormContext } from "react-hook-form";
 
-const FormFieldCheckin: FC = () => {
+type FormFieldCheckinProps = {
+    unavailableDates: Date[]
+}
+
+const FormFieldCheckin: FC<FormFieldCheckinProps> = ({ unavailableDates }) => {
 
     const { register } = useFormContext<BookingSchema>()
 
@@ -18,7 +22,7 @@ const FormFieldCheckin: FC = () => {
             {...register("checkIn")}
             render={({ field }) => (
                 <FormItem className="flex flex-col">
-                    <FormLabel>Check-in</FormLabel>
+                    <FormLabel className="w-fit">Check-in</FormLabel>
                     <Popover>
                         <PopoverTrigger asChild>
                             <FormControl>
@@ -43,7 +47,7 @@ const FormFieldCheckin: FC = () => {
                                 mode="single"
                                 selected={field.value}
                                 onSelect={field.onChange}
-                                disabled={(date) => date < new Date()}
+                                disabled={[(date) => date < new Date(), ...unavailableDates]}
                                 initialFocus
                             />
                         </PopoverContent>

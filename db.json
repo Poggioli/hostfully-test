@@ -121,5 +121,23 @@
         "https://plus.unsplash.com/premium_photo-1663091687045-d108c7fb83e4"
       ]
     }
+  ],
+  "bookings": [
+    {
+      "id": "6fc7819f-d3ca-4059-b984-b7ad1d07fca8",
+      "roomId": "e74ee496-d80a-42c9-8f59-e5db567b4626",
+      "totalPrice": 1020,
+      "checkIn": "2024-01-21T03:00:00.000Z",
+      "checkOut": "2024-01-27T03:00:00.000Z",
+      "quantityGuests": 1
+    },
+    {
+      "id": "491b7c46-fdc2-4f42-88ea-6a646c545e7f",
+      "roomId": "e74ee496-d80a-42c9-8f59-e5db567b4626",
+      "totalPrice": 1260,
+      "checkIn": "2024-01-14T03:00:00.000Z",
+      "checkOut": "2024-01-20T03:00:00.000Z",
+      "quantityGuests": 3
+    }
   ]
 }

@@ -14,7 +14,7 @@ const FormFieldQuantityGuests: FC = () => {
             name="quantityGuests"
             render={({ field }) => (
                 <FormItem>
-                    <FormLabel>Guests</FormLabel>
+                    <FormLabel className="w-fit">Guests</FormLabel>
                     <FormControl>
                         <Input placeholder="number of guests" type="number" {...field} />
                     </FormControl>

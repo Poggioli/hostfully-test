@@ -17,7 +17,7 @@ export function useGetBooking(options?: any) {
   return useQuery<Booking[]>(keys.getBookings, {
     queryFn: async () => {
       const res = await axiosClient.get<Booking[]>("/bookings");
-      return res;
+      return res.data;
     },
     onSuccess(data) {
       setBookings(data);
@@ -86,26 +86,29 @@ export function usePostBooking(options?: any) {
   const queryClient = useQueryClient();
   const { deleteBooking, addBooking } = useStore();
 
-  return useMutation(keys.postBookings, {
-    mutationFn: async (booking: Booking) => {
-      await axiosClient.post(`/bookings`, booking);
-      return booking;
+  return useMutation(
+    keys.postBookings,
+    async (booking: Booking) => {
+      const res = await axiosClient.post(`/bookings`, booking);
+      return res.data;
     },
-    onMutate: async (booking: Booking) => {
-      await queryClient.cancelQueries({ queryKey: keys.postBookings });
-      const previousBookings = queryClient.getQueryData<Booking[]>(
-        keys.getBookings
-      ) as Booking[];
-      addBooking(booking);
-      return { previousBookings };
-    },
-    onError: (err, variables, context: any) => {
-      const booking: Booking = context.previousBooking as Booking;
-      deleteBooking(booking.id);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: keys.getBookings });
-    },
-    ...options,
-  });
+    {
+      onMutate: async (booking: Booking) => {
+        await queryClient.cancelQueries({ queryKey: keys.postBookings });
+        const previousBookings = queryClient.getQueryData<Booking[]>(
+          keys.getBookings
+        ) as Booking[];
+        addBooking(booking);
+        return { previousBookings };
+      },
+      onError: (err, variables, context: any) => {
+        const booking: Booking = context.previousBooking as Booking;
+        deleteBooking(booking.id);
+      },
+      onSettled: () => {
+        queryClient.invalidateQueries({ queryKey: keys.getBookings });
+      },
+      ...options,
+    }
+  );
 }

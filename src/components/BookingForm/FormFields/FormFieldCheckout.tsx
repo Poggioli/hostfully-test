@@ -9,7 +9,11 @@ import { CalendarIcon } from "lucide-react";
 import { FC, useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 
-const FormFieldCheckout: FC = () => {
+type FormFieldCheckoutProps = {
+    unavailableDates: Date[]
+}
+
+const FormFieldCheckout: FC<FormFieldCheckoutProps> = ({ unavailableDates }) => {
 
     const { register, watch } = useFormContext<BookingSchema>()
 
@@ -29,7 +33,7 @@ const FormFieldCheckout: FC = () => {
             disabled={isDisabled}
             render={({ field }) => (
                 <FormItem className="flex flex-col">
-                    <FormLabel>Check-out</FormLabel>
+                    <FormLabel className="w-fit">Check-out</FormLabel>
                     <Popover>
                         <PopoverTrigger asChild>
                             <FormControl>
@@ -55,7 +59,7 @@ const FormFieldCheckout: FC = () => {
                                 mode="single"
                                 selected={field.value}
                                 onSelect={field.onChange}
-                                disabled={(date) => date < minDate}
+                                disabled={[(date) => date < minDate, ...unavailableDates]}
                                 initialFocus
                             />
                         </PopoverContent>

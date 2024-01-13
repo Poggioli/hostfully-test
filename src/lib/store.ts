@@ -11,6 +11,7 @@ type Store = {
   editBooking: (booking: Booking) => void;
   deleteBooking: (id: string) => void;
   addBooking: (booking: Booking) => void;
+  getBookingsByIdRoom: (id: string) => Booking[];
 };
 
 export const useStore = create<Store>((set, get) => ({
@@ -18,20 +19,25 @@ export const useStore = create<Store>((set, get) => ({
   bookings: [],
   setRooms: (rooms: Room[]) => set(() => ({ rooms })),
   findRoom: (id: string) => {
-    const { rooms } = get()
-    return rooms.find((room) => room.id === id)
+    const { rooms } = get();
+    return rooms.find((room) => room.id === id);
   },
   setBookings: (bookings: Booking[]) => set(() => ({ bookings })),
   editBooking: (booking: Booking) =>
     set(({ bookings }) => ({
       bookings: bookings.map((b) => (booking.id === b.id ? booking : b)),
     })),
-  deleteBooking: (id: string) =>
+  deleteBooking: (id: string) => {
     set(({ bookings }) => ({
       bookings: bookings.filter((b) => b.id !== id),
-    })),
-  addBooking: (booking: Booking) =>
-    set(({ bookings }) => ({
+    }))
+  },
+  addBooking: (booking: Booking) => {
+    return set(({ bookings }) => ({
       bookings: [...bookings, booking],
-    })),
+    }))
+  },
+  getBookingsByIdRoom: (id: string): Booking[] => {
+    return get().bookings.filter((booking) => booking.roomId === id);
+  },
 }));
