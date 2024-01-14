@@ -4,6 +4,7 @@ import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, D
 import { Separator } from "@/components/ui/separator";
 import { FC } from "react";
 import { useBookingDrawer } from "./useBookingDrawer";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 
 type BookingDrawerErrorProps = {
@@ -25,7 +26,7 @@ const BookingDrawerError: FC<BookingDrawerErrorProps> = ({ onClose }) => {
 }
 
 const BookingDrawer: FC = () => {
-  const { onClose, room, openBookingModal } = useBookingDrawer();
+  const { onClose, room, openBookingModal, booking } = useBookingDrawer();
 
   const onCloseInOnOpenChange = (value: boolean) => {
     if (!value) {
@@ -40,6 +41,9 @@ const BookingDrawer: FC = () => {
           {!room ? <BookingDrawerError onClose={onClose} /> : (
             <>
               <DrawerHeader className="md:max-w-[300px] md:w-full md:h-fit">
+                <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-t-md">
+                  <img className="rounded-md object-cover w-full h-full" src={room.photos[0]} loading="lazy" alt={`Photo of ${room.name}`} />
+                </AspectRatio>
                 <DrawerTitle className="text-left">{room.name}</DrawerTitle>
                 <DrawerDescription className={"text-left"}>{room.description}</DrawerDescription>
               </DrawerHeader>
@@ -51,7 +55,7 @@ const BookingDrawer: FC = () => {
                   </span>
                   {" "}night
                 </span>
-                <BookingForm room={room} />
+                <BookingForm room={room} booking={booking} />
               </div>
             </>
           )}

@@ -1,143 +1,225 @@
 {
   "rooms": [
     {
-      "id": "82c67959-a414-4470-b26b-ba4261cfe867",
-      "name": "House with Wi-Fi",
-      "description": "Is located just 1 hour from the center of SP, easy access via Regis Bitencourt, an all paved route",
-      "pricePerDay": 900,
-      "pricePerGuest": 120,
-      "photos": [
-        "https://images.unsplash.com/photo-1704211825599-9e2ec712f561",
-        "https://images.unsplash.com/photo-1696861080288-0cc2f1cd48d5"
-      ]
-    },
-    {
-      "id": "b8747697-66c6-49bd-b052-bd90ad653dd5",
-      "name": "Apartment in Consolação",
-      "description": "Located on the 20th floor, in the best location in Higienopolis. In front of Mackenzie, PUC-Cogeae, next to Metro Higienopolis, just a few minutes from Shopping Patio Higienopolis, best view and impossible location",
-      "pricePerDay": 189,
-      "pricePerGuest": 120,
-      "photos": [
-        "https://images.unsplash.com/photo-1518780664697-55e3ad937233",
-        "https://images.unsplash.com/photo-1554995207-c18c203602cb"
-      ]
-    },
-    {
-      "id": "e74ee496-d80a-42c9-8f59-e5db567b4626",
-      "name": "Flat in Brazil",
-      "description": "Beautiful studio in the center of SP, in the Setin Downtown São Luis building, close to the Anhangabaú metro, new and well located apartment, with all the facilities that the Consolação neighborhood can offer",
-      "pricePerDay": 150,
-      "pricePerGuest": 120,
-      "photos": [
-        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6",
-        "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83"
-      ]
-    },
-    {
-      "id": "edf0e965-0591-4c0b-beeb-9b2e6d2fefa4",
-      "name": "House in Santo André, Brazil",
-      "description": "Bring your best smile and come celebrate with the Perfect Outdoor Setting You've Been Looking For!",
-      "pricePerDay": 599,
-      "pricePerGuest": 120,
-      "photos": [
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9"
-      ]
-    },
-    {
-      "id": "d2420e83-5460-4f1a-b0f9-1057980b6244",
-      "name": "Mairiporã, Brazil",
-      "description": "Family home, Vila Lilo arose from the desire to allow other people to have intense contact with nature away from the rush. We provide everything you need to reconnect with the things that really matter.",
+      "id": "1a8e9bfc-43d2-4f70-9e6a-59a61d8f7a01",
+      "name": "Serene Seaside Villa",
+      "description": "Escape to this stunning seaside villa, offering breathtaking views of the ocean and a tranquil environment for ultimate relaxation.",
       "pricePerDay": 1200,
-      "pricePerGuest": 120,
+      "pricePerGuest": 300,
       "photos": [
-        "https://images.unsplash.com/photo-1572120360610-d971b9d7767c",
-        "https://images.unsplash.com/photo-1576941089067-2de3c901e126"
+        "https://images.unsplash.com/photo-1559489031-fbaf8fe8e947?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1464851707681-f9d5fdaccea8?q=80&w=2133&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     },
     {
-      "id": "a58bad3d-28bd-490d-9ab2-3943046451c5",
-      "name": "Cotia, Brazil",
-      "description": "Relax with the whole family in this peaceful, very spacious accommodation in an excellent location",
-      "pricePerDay": 948,
-      "pricePerGuest": 120,
+      "id": "2b9d6f6a-34c1-491e-8a28-846d6f87b830",
+      "name": "Enchanted Forest Cabin",
+      "description": "Immerse yourself in nature with this cozy cabin surrounded by an enchanted forest, perfect for a magical retreat.",
+      "pricePerDay": 800,
+      "pricePerGuest": 200,
       "photos": [
-        "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc",
-        "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09"
+        "https://images.unsplash.com/photo-1646678320065-5aa83f36c141?q=80&w=2140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1646684000460-5f515d1ff293?q=80&w=2146&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     },
     {
-      "id": "75838da9-abbf-4043-8254-b8b1f2f082ca",
-      "name": "Granja Viana, Brazil",
-      "description": "23Km from SP, Casa Relax is ideal for family and friends gatherings. Great for strategic planning for your team. Nature, barbecue and heated pool, fun guaranteed even on cold and cloudy days.",
+      "id": "3c5e807d-7bfa-4f45-a453-9e82ea7d0046",
+      "name": "Skyline Penthouse",
+      "description": "Experience luxury living in this modern penthouse with panoramic views of the city skyline, perfect for a stylish urban escape.",
       "pricePerDay": 1500,
-      "pricePerGuest": 120,
+      "pricePerGuest": 375,
       "photos": [
-        "https://images.unsplash.com/photo-1598228723793-52759bba239c",
-        "https://plus.unsplash.com/premium_photo-1661876449499-26de7959878f"
+        "https://images.unsplash.com/photo-1587500892601-9d1ebfaa05be?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1607570799395-b968ad047e3f?q=80&w=1688&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     },
     {
-      "id": "5dfde155-5f86-4f6b-874f-f45d75565b1d",
-      "name": "Camanducaia, Brazil",
-      "description": "Cabana da Mata is an entire wooden construction, inspired by forest cabins in the USA. At an altitude of 1,600 m, the Cabana offers a rustic experience, surrounded by greenery, the sound of birds, and time to rest and enjoy the nature of Mantiqueira.",
-      "pricePerDay": 430,
-      "pricePerGuest": 120,
+      "id": "4d2e1f96-682d-4c7a-aaf5-3c7456b8e789",
+      "name": "Mountain Chalet Retreat",
+      "description": "Unwind in this charming mountain chalet surrounded by alpine beauty, offering a cozy haven for nature lovers.",
+      "pricePerDay": 1000,
+      "pricePerGuest": 250,
       "photos": [
-        "https://images.unsplash.com/photo-1575517111478-7f6afd0973db",
-        "https://images.unsplash.com/photo-1484154218962-a197022b5858"
+        "https://images.unsplash.com/photo-1448737933984-6d0ae61b2b57?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1480497490787-505ec076689f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     },
     {
-      "id": "f9e82fdf-30d0-47de-8fe5-e1422305c051",
-      "name": "Angra dos Reis, Brazil",
-      "description": "Welcome to paradise at Casa do Didigo! This seaside house offers a unique experience on Ilha Grande, surrounded by native forest and with an exclusive access beach with calm, crystal-clear waters, in total tranquility.",
-      "pricePerDay": 2000,
-      "pricePerGuest": 120,
+      "id": "5e6a9c0b-9b45-4cf0-aa1e-7e8d1f3c5210",
+      "name": "Tropical Paradise Bungalow",
+      "description": "Discover paradise in this tropical bungalow, surrounded by lush greenery and just steps away from pristine beaches.",
+      "pricePerDay": 900,
+      "pricePerGuest": 225,
       "photos": [
-        "https://images.unsplash.com/photo-1513584684374-8bab748fbf90",
-        "https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb"
+        "https://images.unsplash.com/photo-1645792917205-737cc176276a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1602693680104-b8ae3138c22b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     },
     {
-      "id": "aafd39e7-79c8-4900-958b-265f9b17c73c",
-      "name": "Bungalow in Caraiva, Brazil",
-      "description": "Charming bungalow on Caraiva beach where you can have the wonderful experience of watching the sun rise over the sea horizon from your bed and waking up with a morning swim.",
-      "pricePerDay": 450,
-      "pricePerGuest": 120,
+      "id": "6f8c12d5-4a3e-4a3e-8f6a-947c3c835da0",
+      "name": "Riverside Cabin Retreat",
+      "description": "Reconnect with nature in this riverside cabin, providing a peaceful escape with the soothing sounds of flowing water.",
+      "pricePerDay": 700,
+      "pricePerGuest": 175,
       "photos": [
-        "https://images.unsplash.com/photo-1448630360428-65456885c650",
-        "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"
+        "https://images.unsplash.com/photo-1525113990976-399835c43838?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1470043201067-764120126eb4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     },
     {
-      "id": "230e42ff-ab78-4a75-b1be-2ed50f5714b4",
-      "name": "House in Praia da Pipa, Brazil",
-      "description": "Vila Amarela is a space designed and created by residents who love Pipa. It is a mini condominium with 5 temporary rental houses and a pool and barbecue area.",
-      "pricePerDay": 440,
-      "pricePerGuest": 120,
+      "id": "7b39e864-8a1c-40cc-8f51-5e2a789d59b2",
+      "name": "Modern City Loft",
+      "description": "Live in style in this modern city loft, surrounded by the vibrant energy of the urban landscape.",
+      "pricePerDay": 1300,
+      "pricePerGuest": 325,
       "photos": [
-        "https://images.unsplash.com/photo-1582063289852-62e3ba2747f8",
-        "https://plus.unsplash.com/premium_photo-1663091687045-d108c7fb83e4"
+        "https://plus.unsplash.com/premium_photo-1661964203218-bf8778198314?q=80&w=2005&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1686325504321-736f32991021?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "8d7c2e94-2a45-4b1d-9a9d-4fdd784ec5ae",
+      "name": "Historic Manor House",
+      "description": "Step back in time in this historic manor house, showcasing grandeur and charm from a bygone era.",
+      "pricePerDay": 1100,
+      "pricePerGuest": 275,
+      "photos": [
+        "https://images.unsplash.com/photo-1528736613140-347578be84c2?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1602795969916-bfe693173620?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "9eac6f8d-d01f-4c91-bcd5-62e3a5b7d6d1",
+      "name": "Desert Oasis Retreat",
+      "description": "Experience tranquility in this desert oasis retreat, surrounded by vast landscapes and stunning sunsets.",
+      "pricePerDay": 950,
+      "pricePerGuest": 237,
+      "photos": [
+        "https://images.unsplash.com/photo-1536007164800-b7f11331f35c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1514471244491-6fb96fcdf04f?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "10f6a1c2-7318-4462-a495-d9e3c9a228ff",
+      "name": "Ski Chalet Getaway",
+      "description": "Embrace winter in this ski chalet, offering a cozy haven after a day on the slopes with breathtaking mountain views.",
+      "pricePerDay": 1400,
+      "pricePerGuest": 350,
+      "photos": [
+        "https://images.unsplash.com/photo-1487975460695-a2e5c4ea12c9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1547019122-0428a4d59174?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "11cfe8b2-52a7-4cb5-9871-0f0dab32e6d9",
+      "name": "Beachfront Paradise Villa",
+      "description": "Relax in luxury at this beachfront villa, where the sound of the waves and the sea breeze create a perfect paradise.",
+      "pricePerDay": 1200,
+      "pricePerGuest": 300,
+      "photos": [
+        "https://images.unsplash.com/photo-1528913775512-624d24b27b96?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1535961652354-923cb08225a7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "12b71f56-39b0-4f86-91d9-3d42b0a1b1ec",
+      "name": "Eco-Friendly Treehouse",
+      "description": "Experience sustainable living in this eco-friendly treehouse, surrounded by nature and offering a unique treetop retreat.",
+      "pricePerDay": 600,
+      "pricePerGuest": 150,
+      "photos": [
+        "https://images.unsplash.com/photo-1513517147916-e77dd158b0a7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513517860393-d9bf0651bed8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "13d5f6e8-96fb-49b2-b855-5e6857f581ec",
+      "name": "Mansion on the Hill",
+      "description": "Live like royalty in this opulent mansion perched on a hill, providing panoramic views and luxurious accommodations.",
+      "pricePerDay": 1500,
+      "pricePerGuest": 375,
+      "photos": [
+        "https://images.unsplash.com/photo-1595949390207-d9fe5dd83800?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1596467587944-411a0264932f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "14a0f9c3-7a49-42c2-8c0d-8f371dbaa46d",
+      "name": "Lakeview Cabin Retreat",
+      "description": "Escape to this charming cabin with a picturesque view of the lake, offering a serene retreat for nature enthusiasts.",
+      "pricePerDay": 900,
+      "pricePerGuest": 225,
+      "photos": [
+        "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1563373983-ac3cd3c764cd?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "15a8b974-3cf9-4c65-9f1e-56e56fc74315",
+      "name": "Contemporary Beach House",
+      "description": "Enjoy modern comfort in this contemporary beach house, steps away from sandy shores and endless ocean views.",
+      "pricePerDay": 1300,
+      "pricePerGuest": 325,
+      "photos": [
+        "https://images.unsplash.com/photo-1511840636560-acee95b3a83f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "16d3e5b6-dc43-4ee4-967e-6451781e0e6f",
+      "name": "Vineyard Villa",
+      "description": "Savor the beauty of wine country in this villa surrounded by lush vineyards, offering a perfect retreat for wine enthusiasts.",
+      "pricePerDay": 1100,
+      "pricePerGuest": 275,
+      "photos": [
+        "https://images.unsplash.com/photo-1653228386001-47eab56d3730?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1661962262643-9d106f78406a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "17f2b9e0-3b10-4a0c-bd19-9bc78b2d43c6",
+      "name": "Countryside Farmhouse",
+      "description": "Experience rustic charm in this countryside farmhouse, surrounded by rolling hills and the peaceful sounds of nature.",
+      "pricePerDay": 800,
+      "pricePerGuest": 200,
+      "photos": [
+        "https://images.unsplash.com/photo-1531054981304-6faa1d7fb2b8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1531914690038-9ea4666a38e4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "18c4eaf7-eb8b-4812-9ef0-f5f4cf7bda14",
+      "name": "Historic Church Conversion",
+      "description": "Stay in a piece of history with this unique church conversion, combining modern comfort with historic architecture.",
+      "pricePerDay": 1000,
+      "pricePerGuest": 250,
+      "photos": [
+        "https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1430747562296-5556d17a15a5?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "19b8f204-aa4f-4c59-84fc-13ec768a54cd",
+      "name": "A-frame Mountain Chalet",
+      "description": "Discover the charm of this A-frame chalet nestled in the mountains, offering a cozy and stylish mountain retreat.",
+      "pricePerDay": 950,
+      "pricePerGuest": 237,
+      "photos": [
+        "https://images.unsplash.com/photo-1602081850519-24694aee87e1?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1680098057499-9850b921ebb5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "id": "20a5e7c9-c5bf-4bd1-a1e1-3e2ecf5e2a87",
+      "name": "Mystical Island Hideaway",
+      "description": "Escape to this mystical island hideaway, surrounded by lush vegetation and crystal-clear waters for a truly enchanting experience.",
+      "pricePerDay": 1200,
+      "pricePerGuest": 300,
+      "photos": [
+        "https://images.unsplash.com/photo-1594121292235-7c01bf21b2c3?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1586188988726-474b2ee95d77?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     }
   ],
-  "bookings": [
-    {
-      "id": "b00d6573-d33d-4494-93b8-667e6dc1cb5f",
-      "roomId": "b8747697-66c6-49bd-b052-bd90ad653dd5",
-      "totalPrice": 2334,
-      "checkIn": "2024-01-14T03:00:00.000Z",
-      "checkOut": "2024-01-20T03:00:00.000Z",
-      "quantityGuests": 10
-    },
-    {
-      "id": "d21b0c66-16f8-4261-910f-21c0d6174b91",
-      "roomId": "e74ee496-d80a-42c9-8f59-e5db567b4626",
-      "totalPrice": 1980,
-      "checkIn": "2024-01-14T03:00:00.000Z",
-      "checkOut": "2024-01-20T03:00:00.000Z",
-      "quantityGuests": 9
-    }
-  ]
+  "bookings": []
 }

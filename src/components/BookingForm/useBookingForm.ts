@@ -1,5 +1,5 @@
 import { useStore } from "@/lib/store";
-import { Booking, usePostBooking } from "@/service/Booking";
+import { Booking, useEditBooking, usePostBooking } from "@/service/Booking";
 import { Room } from "@/service/Room";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -14,7 +14,7 @@ import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 import * as z from "zod";
-import { useBookingDrawer } from "../BookingDrawer";
+import { useBookingDrawer } from "@/components/BookingDrawer";
 
 const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
@@ -67,24 +67,35 @@ export type BookingSchema = z.infer<typeof bookingSchema>;
 
 type UseBookingFormProps = {
   room: Room;
+  booking?: BookingSchema & {
+    id: string
+  }
 };
 
-export const useBookingForm = (options: UseBookingFormProps) => {
+export const useBookingForm = ({ room, booking }: UseBookingFormProps) => {
   const { onClose } = useBookingDrawer();
   const { getBookingsByIdRoom } = useStore();
-  const { mutate } = usePostBooking();
-  const bookings = getBookingsByIdRoom(options.room.id);
+  const { mutate: createBooking } = usePostBooking();
+  const { mutate: editBooking } = useEditBooking();
+  const bookings = getBookingsByIdRoom(room.id);
 
   const form = useForm<BookingSchema>({
     resolver: zodResolver(bookingSchema),
+    defaultValues: {
+      ...(booking && ({
+        ...booking,
+        checkIn: new Date(booking.checkIn),
+        checkOut: new Date(booking.checkOut)
+      }))
+    }
   });
 
   const unavailableDates: Date[] = bookings.reduce(
     (prev: Date[], curr: Booking) => {
-      const datesInInterval = eachDayOfInterval({
+      const datesInInterval = curr.id !== booking?.id ? eachDayOfInterval({
         start: curr.checkIn,
         end: curr.checkOut,
-      });
+      }) : [];
       return [...prev, ...datesInInterval];
     },
     []
@@ -99,24 +110,24 @@ export const useBookingForm = (options: UseBookingFormProps) => {
   }, [form.watch("checkIn"), form.watch("checkOut")]);
 
   const totalPriceGuest: number = useMemo(() => {
-    return (form.watch("quantityGuests") || 0) * options.room.pricePerGuest;
-  }, [form.watch("quantityGuests"), options.room.pricePerGuest]);
+    return (form.watch("quantityGuests") || 0) * room.pricePerGuest;
+  }, [form.watch("quantityGuests"), room.pricePerGuest]);
 
   const totalPriceDay: number = useMemo(() => {
-    return options.room.pricePerDay * bookingDays;
-  }, [options.room.pricePerDay, bookingDays]);
+    return room.pricePerDay * bookingDays;
+  }, [room.pricePerDay, bookingDays]);
 
   const totalPrice: number = useMemo(() => {
     return totalPriceDay + totalPriceGuest;
   }, [totalPriceDay, totalPriceGuest]);
 
   const onSubmit = (data: BookingSchema) => {
-    const isOverlapping = bookings.some((room) =>
-      areIntervalsOverlapping(
+    const isOverlapping = bookings.some((b) =>
+      b.id !== booking?.id ? areIntervalsOverlapping(
         { start: data.checkIn, end: data.checkOut },
-        { start: room.checkIn, end: room.checkOut },
+        { start: b.checkIn, end: b.checkOut },
         { inclusive: true }
-      )
+      ) : false
     );
 
     if (isOverlapping) {
@@ -127,9 +138,20 @@ export const useBookingForm = (options: UseBookingFormProps) => {
       return;
     }
 
-    mutate({
+    if (booking) {
+      editBooking({
+        id: booking.id,
+        roomId: room.id,
+        totalPrice: totalPrice,
+        ...data,
+      });
+      onClose();
+      return;
+    }
+
+    createBooking({
       id: uuidv4(),
-      roomId: options.room.id,
+      roomId: room.id,
       totalPrice: totalPrice,
       ...data,
     });

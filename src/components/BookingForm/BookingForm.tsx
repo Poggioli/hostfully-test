@@ -2,16 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Form, FormMessage } from "@/components/ui/form";
 import { Room } from "@/service/Room";
 import { FC } from "react";
-import { useBookingDrawer } from "../BookingDrawer";
+import { useBookingDrawer } from "@/components/BookingDrawer";
 import { CheckoutInfo } from "./CheckoutInfo";
 import { FormFieldCheckin, FormFieldCheckout, FormFieldQuantityGuests } from "./FormFields";
 import { useBookingForm } from "./useBookingForm";
+import { Booking } from "@/service/Booking";
 
 type BookingFormProps = {
     room: Room;
+    booking?: Booking
 }
 
-const BookingForm: FC<BookingFormProps> = ({ room }) => {
+const BookingForm: FC<BookingFormProps> = ({ room, booking }) => {
     const {
         form,
         onSubmit,
@@ -20,7 +22,7 @@ const BookingForm: FC<BookingFormProps> = ({ room }) => {
         bookingDays,
         totalPrice,
         unavailableDates
-    } = useBookingForm({ room });
+    } = useBookingForm({ room, booking });
     const { onClose } = useBookingDrawer();
 
     return (
@@ -42,10 +44,10 @@ const BookingForm: FC<BookingFormProps> = ({ room }) => {
                         totalPriceDay={totalPriceDay}
                         totalPriceGuest={totalPriceGuest}
                     />
-                    <Button type="submit">Book</Button>
+                    <Button type="submit">{booking ? 'Save' : 'Book'}</Button>
                 </form>
             </Form>
-            <Button className="mt-4 w-full" onClick={onClose} variant="outline">Close</Button>
+            <Button className="mt-4 w-full" onClick={onClose} variant="outline">Cancel</Button>
         </>
     )
 };

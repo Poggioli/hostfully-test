@@ -28,7 +28,6 @@ const DeleteBookingModal: FC<DeleteBookingModalProps> = ({ id }) => {
         <Button variant="destructive">
           <Trash className="mr-2 h-4 w-4" /> Cancel
         </Button>
-
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
