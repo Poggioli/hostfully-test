@@ -48,7 +48,6 @@ const FormFieldCheckin: FC<FormFieldCheckinProps> = ({ unavailableDates }) => {
                                 selected={field.value}
                                 onSelect={field.onChange}
                                 disabled={[(date) => date < new Date(), ...unavailableDates]}
-                                initialFocus
                             />
                         </PopoverContent>
                     </Popover>

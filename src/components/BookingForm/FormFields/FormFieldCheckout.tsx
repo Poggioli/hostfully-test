@@ -60,7 +60,6 @@ const FormFieldCheckout: FC<FormFieldCheckoutProps> = ({ unavailableDates }) => 
                                 selected={field.value}
                                 onSelect={field.onChange}
                                 disabled={[(date) => date < minDate, ...unavailableDates]}
-                                initialFocus
                             />
                         </PopoverContent>
                     </Popover>

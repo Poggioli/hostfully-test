@@ -13,7 +13,7 @@ const FormFieldQuantityGuests: FC = () => {
             {...register("quantityGuests")}
             name="quantityGuests"
             render={({ field }) => (
-                <FormItem>
+                <FormItem className="max-w-[240px]">
                     <FormLabel className="w-fit">Guests</FormLabel>
                     <FormControl>
                         <Input placeholder="number of guests" type="number" {...field} />
