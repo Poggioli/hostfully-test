@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run --coverage",
-    "start-db": "npx json-server db.json"
+    "start:db": "json-server --watch db.json --port 3000"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
