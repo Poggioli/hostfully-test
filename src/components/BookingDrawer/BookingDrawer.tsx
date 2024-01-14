@@ -44,6 +44,11 @@ const BookingDrawer: FC = () => {
                 <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-t-md">
                   <img className="rounded-md object-cover w-full h-full" src={room.photos[0]} loading="lazy" alt={`Photo of ${room.name}`} />
                 </AspectRatio>
+                <div className="hidden md:block">
+                  <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-t-md">
+                    <img className="rounded-md object-cover w-full h-full" src={room.photos[1]} loading="lazy" alt={`Photo of ${room.name}`} />
+                  </AspectRatio>
+                </div>
                 <DrawerTitle className="text-left">{room.name}</DrawerTitle>
                 <DrawerDescription className={"text-left"}>{room.description}</DrawerDescription>
               </DrawerHeader>
