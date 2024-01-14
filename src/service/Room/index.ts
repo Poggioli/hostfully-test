@@ -1,2 +1,3 @@
 export * from './room.service';
-export * from './room.type';
+export * from './room.types';
+

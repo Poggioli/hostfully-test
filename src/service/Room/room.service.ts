@@ -2,7 +2,7 @@
 import { useStore } from "@/lib/store";
 import axiosClient from "@/service/api";
 import { useQuery } from "react-query";
-import { Room } from "./room.type";
+import { Room } from "./room.types";
 
 const keys = {
   getRooms: ["rooms"],
