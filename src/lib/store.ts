@@ -25,6 +25,7 @@ export const useStore = create<Store>((set, get) => ({
         return {
           ...booking,
           roomName: room?.name || "-",
+          photos: room?.photos || [],
         };
       }),
     })),
@@ -38,6 +39,7 @@ export const useStore = create<Store>((set, get) => ({
       return {
         ...booking,
         roomName: room?.name || "-",
+        photos: room?.photos || [],
       };
     })
   })),

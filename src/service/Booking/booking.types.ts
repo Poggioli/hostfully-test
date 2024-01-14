@@ -6,4 +6,5 @@ export type Booking = {
   checkOut: Date;
   quantityGuests: number;
   roomName?: string;
+  photos?: string[]
 }

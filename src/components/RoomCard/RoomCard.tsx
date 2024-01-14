@@ -17,11 +17,11 @@ const RoomCard: FC<RoomCardProps> = ({ name, description, pricePerDay, photos, i
 
   return (
     <Card className="w-full">
-      <AspectRatio ratio={16 / 9} className="rounded overflow-hidden">
+      <AspectRatio ratio={16 / 9} className="rounded-t-md overflow-hidden">
         <img
           src={photos[0]}
           alt={`Photo of ${name}`}
-          className="rounded object-cover"
+          className="rounded object-cover w-full h-full"
         />
       </AspectRatio>
       <CardHeader className="flex flex-col gap-4 pb-3">

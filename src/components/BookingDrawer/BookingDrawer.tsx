@@ -12,7 +12,7 @@ type BookingDrawerErrorProps = {
 
 const BookingDrawerError: FC<BookingDrawerErrorProps> = ({ onClose }) => {
   return (
-    <>
+    <div>
       <DrawerHeader>
         <DrawerTitle className="text-center">Room not found</DrawerTitle>
         <DrawerDescription className="text-center">We could not found the room that you are looking for.</DrawerDescription>
@@ -20,7 +20,7 @@ const BookingDrawerError: FC<BookingDrawerErrorProps> = ({ onClose }) => {
       <DrawerFooter>
         <Button onClick={onClose} variant="outline">Close</Button>
       </DrawerFooter>
-    </>
+    </div>
   )
 }
 
@@ -36,7 +36,7 @@ const BookingDrawer: FC = () => {
   return (
     <Drawer open={!!openBookingModal} onOpenChange={onCloseInOnOpenChange}>
       <DrawerContent>
-        <div className="mx-auto max-w-[400px] max-h-[100vh] overflow-y-auto md:w-full md:max-w-[640px] md:overflow-hidden md:flex md:pt-8 md:items-center">
+        <div className="mx-auto max-w-[400px] max-h-[100vh] overflow-y-auto md:w-full md:max-w-[640px] md:overflow-hidden md:flex md:pt-8 md:items-top md:justify-center">
           {!room ? <BookingDrawerError onClose={onClose} /> : (
             <>
               <DrawerHeader className="md:max-w-[300px] md:w-full md:h-fit">
