@@ -223,11 +223,11 @@
   ],
   "bookings": [
     {
-      "id": "0a0a1d83-f765-464d-9fc2-4e48fafb8c82",
+      "id": "b47082ba-a34a-4128-a601-3f28e061a39d",
       "roomId": "3c5e807d-7bfa-4f45-a453-9e82ea7d0046",
-      "totalPrice": 6750,
+      "totalPrice": 11250,
       "checkIn": "2024-01-15T03:00:00.000Z",
-      "checkOut": "2024-01-19T03:00:00.000Z",
+      "checkOut": "2024-01-22T03:00:00.000Z",
       "quantityGuests": 2
     }
   ]

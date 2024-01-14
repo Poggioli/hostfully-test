@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useStore } from "@/lib/store";
 import axiosClient from "@/service/api";
+import { format } from "date-fns";
 import { useMutation, useQuery, useQueryClient } from "react-query";
+import { toast } from "sonner";
 import { Booking } from "./booking.types";
 
 const keys = {
@@ -46,6 +48,18 @@ export function useDeleteBooking(options?: any) {
       onError: (err, variables, context: any) => {
         const booking: Booking = context.previousBookings as Booking;
         addBooking(booking);
+        toast.error('Error to edit', {
+          description: `Ops, something went wrong...`,
+          action: {
+            label: "OK",
+            onClick: () => { },
+          },
+        })
+      },
+      onSuccess(data, variables, context) {
+        toast.success('Booking deleted', {
+          description: 'Your booking was deleted.'
+        })
       },
       onSettled: () => {
         queryClient.invalidateQueries({ queryKey: keys.getBookings });
@@ -79,6 +93,18 @@ export function useEditBooking(options?: any) {
       onError: (err, variables, context: any) => {
         const booking: Booking = context.previousBooking as Booking;
         editBooking(booking);
+        toast.error('Error to edit', {
+          description: `Ops, something went wrong...`,
+          action: {
+            label: "OK",
+            onClick: () => { },
+          }
+        })
+      },
+      onSuccess(data, variables, context) {
+        toast.success('Booking edited', {
+          description: `Your booking is to ${format(data.checkIn, "PPP")} - ${format(data.checkOut, "PPP")}.`
+        })
       },
       onSettled: () => {
         queryClient.invalidateQueries({ queryKey: keys.getBookings });
@@ -95,7 +121,7 @@ export function usePostBooking(options?: any) {
   return useMutation(
     keys.postBookings,
     async (booking: Booking) => {
-      const res = await axiosClient.post(`/bookings`, booking);
+      const res = await axiosClient.post<Booking>(`/bookings`, booking);
       return res.data;
     },
     {
@@ -110,6 +136,18 @@ export function usePostBooking(options?: any) {
       onError: (err, variables, context: any) => {
         const booking: Booking = context.previousBooking as Booking;
         deleteBooking(booking.id);
+        toast.error('Error to create', {
+          description: `Ops, something went wrong...`,
+          action: {
+            label: "OK",
+            onClick: () => { },
+          }
+        })
+      },
+      onSuccess: (data, variables, context) => {
+        toast.success('Booking created', {
+          description: `Your booking is to ${format(data.checkIn, "PPP")} - ${format(data.checkOut, "PPP")}`
+        })
       },
       onSettled: () => {
         queryClient.invalidateQueries({ queryKey: keys.getBookings });

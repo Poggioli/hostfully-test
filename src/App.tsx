@@ -1,8 +1,9 @@
-import { useState } from "react"
-import { Tabs, TabsList, TabsTrigger } from "./components/ui/tabs"
-import { Router } from "./pages/Router"
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { BookingDrawer } from "./components/BookingDrawer";
+import { Toaster } from "./components/ui/sonner";
+import { Tabs, TabsList, TabsTrigger } from "./components/ui/tabs";
+import { Router } from "./pages/Router";
 import { useGetBooking } from "./service/Booking";
 import { useGetRooms } from "./service/Room";
 
@@ -10,8 +11,9 @@ function App() {
 
   useGetBooking();
   useGetRooms();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [tab, setTab] = useState('rooms');
+  const [tab, setTab] = useState(pathname.includes('rooms') ? 'rooms' : 'bookings');
 
   const onValueChange = (value: string) => {
     setTab(value);
@@ -28,6 +30,7 @@ function App() {
         <Router />
         <BookingDrawer />
       </Tabs>
+      <Toaster position="bottom-center" />
     </div>
   )
 }
