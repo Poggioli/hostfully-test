@@ -4,7 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Booking } from "@/service/Booking";
-import { format } from "date-fns";
+import { differenceInCalendarDays, format } from "date-fns";
 import { Edit } from "lucide-react";
 import { FC } from "react";
 
@@ -22,7 +22,8 @@ const BookingCard: FC<BookingCardProps> = ({
 
   const { onEdit } = useBookingDrawer()
 
-  const bookingPeriod = `${format(checkIn, "PPP")} - ${format(checkOut, "PPP")}`
+  const bookingPeriod = `${format(checkIn, "PP")} - ${format(checkOut, "PP")}`
+  const periodInDays = `${Math.abs(differenceInCalendarDays(checkIn, checkOut))} days`
 
   const handleEdit = () => {
     onEdit(id);
@@ -37,7 +38,14 @@ const BookingCard: FC<BookingCardProps> = ({
       ) : null}
       <CardHeader className={`flex flex-col pb-3 ${photos?.length ? 'pt-0' : ''}`}>
         <CardTitle>{roomName}</CardTitle>
-        <CardDescription className="">{bookingPeriod}</CardDescription>
+        <CardDescription className="flex flex-row justify-between gap-x-6 flex-wrap">
+          <span>
+            {bookingPeriod}
+          </span>
+          <span>
+            {periodInDays}
+          </span>
+        </CardDescription>
       </CardHeader>
 
       <CardContent className="flex flex-col gap-1 pb-4">

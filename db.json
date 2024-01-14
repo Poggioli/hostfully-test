@@ -229,6 +229,14 @@
       "checkIn": "2024-01-15T03:00:00.000Z",
       "checkOut": "2024-01-22T03:00:00.000Z",
       "quantityGuests": 2
+    },
+    {
+      "id": "5877e65d-876d-4ec3-92f3-1915bea7f849",
+      "roomId": "3c5e807d-7bfa-4f45-a453-9e82ea7d0046",
+      "totalPrice": 5250,
+      "checkIn": "2024-01-23T03:00:00.000Z",
+      "checkOut": "2024-01-26T03:00:00.000Z",
+      "quantityGuests": 2
     }
   ]
 }

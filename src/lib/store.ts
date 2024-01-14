@@ -5,6 +5,8 @@ import { create } from "zustand";
 type Store = {
   rooms: Room[];
   bookings: Booking[];
+  // rooms: { items: Room[]; error: boolean; };
+  // bookings: { items: Booking[]; error: boolean; };
   findRoom: (id: string) => Room | undefined;
   setBookings: (bookings: Booking[]) => void;
   setRooms: (rooms: Room[]) => void;
