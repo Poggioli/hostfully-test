@@ -1,12 +1,12 @@
-import { Booking } from "@/service/Booking";
-import { FC } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { format } from "date-fns";
+import { useBookingDrawer } from "@/components/BookingDrawer";
 import { DeleteBookingModal } from "@/components/DeleteBookingModal";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useBookingDrawer } from "@/components/BookingDrawer";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Booking } from "@/service/Booking";
+import { format } from "date-fns";
+import { Edit } from "lucide-react";
+import { FC } from "react";
 
 type BookingCardProps = Booking;
 

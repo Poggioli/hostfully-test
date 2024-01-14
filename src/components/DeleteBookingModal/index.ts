@@ -1,1 +1,1 @@
-export * from './DeleteBookingModal'
+export * from './DeleteBookingModal';

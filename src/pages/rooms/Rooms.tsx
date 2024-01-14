@@ -24,7 +24,7 @@ const Rooms: FC = () => {
 
   const { rooms } = useStore()
   const { isLoading, isError, refetch } = useGetRooms();
-  
+
   return !isError ? (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
       {!isLoading && !isError && rooms.length ? (

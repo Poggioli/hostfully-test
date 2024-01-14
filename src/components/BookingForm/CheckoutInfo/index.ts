@@ -1,1 +1,1 @@
-export * from './CheckoutInfo'
+export * from './CheckoutInfo';

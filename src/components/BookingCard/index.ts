@@ -1,1 +1,1 @@
-export * from './BookingCard'
+export * from './BookingCard';

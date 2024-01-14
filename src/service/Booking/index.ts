@@ -1,2 +1,2 @@
 export * from './booking.service';
-export * from './booking.types'
+export * from './booking.types';
