@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bookings GIVEN a Bookings component
+      WHEN the endpoint return success
+      AND the data is empty
+      THEN should render the empty message 1`] = `
+<body>
+  <div>
+    <div
+      class="w-full flex justify-center items-center"
+    >
+      <h3
+        class="scroll-m-20 text-2xl font-semibold tracking-tight"
+      >
+        You don't have bookings yet
+      </h3>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Bookings GIVEN a Bookings component
+      WHEN the endpoint return success
+      THEN should render the bookings card 1`] = `
+<body>
+  <div>
+    <div
+      class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10"
+    >
+      <div
+        class="rounded-xl border bg-card text-card-foreground shadow w-full"
+      >
+        <div
+          class="space-y-1.5 p-6 flex flex-col pb-3"
+        >
+          <h3
+            class="font-semibold leading-none tracking-tight"
+          />
+          <p
+            class="text-sm text-muted-foreground flex flex-row justify-between gap-x-6 flex-wrap"
+          >
+            <span>
+              Sep 24, 2024 - Sep 28, 2024
+            </span>
+            <span>
+              4 days
+            </span>
+          </p>
+        </div>
+        <div
+          class="p-6 pt-0 flex flex-col gap-1 pb-4"
+        >
+          <div
+            class="flex gap-6 justify-between"
+          >
+            <span
+              class="underline"
+            >
+              Total
+            </span>
+            <span>
+              $
+              5000
+            </span>
+          </div>
+          <div
+            class="flex gap-6 justify-between"
+          >
+            <span
+              class="underline"
+            >
+              Guests
+            </span>
+            <span>
+              4
+            </span>
+          </div>
+        </div>
+        <div
+          class="items-center p-6 pt-0 flex justify-between gap-4 flex-wrap"
+        >
+          <button
+            aria-controls="radix-:r0:"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 h-9 px-4 py-2"
+            data-state="closed"
+            type="button"
+          >
+            <svg
+              class="lucide lucide-trash mr-2 h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 6h18"
+              />
+              <path
+                d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"
+              />
+              <path
+                d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
+              />
+            </svg>
+             Cancel
+          </button>
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2"
+          >
+            <svg
+              class="lucide lucide-square-pen mr-2 h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+              />
+              <path
+                d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"
+              />
+            </svg>
+             Edit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
