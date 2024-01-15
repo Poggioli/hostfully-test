@@ -9,10 +9,10 @@ export type RoomCardProps = Room
 
 const RoomCard: FC<RoomCardProps> = ({ name, description, pricePerDay, photos, id }) => {
 
-  const { onOpen: onOpenBookingDrawer } = useBookingDrawer()
+  const { onOpen } = useBookingDrawer()
 
   const onReserve = () => {
-    onOpenBookingDrawer(id)
+    onOpen(id)
   }
 
   return (

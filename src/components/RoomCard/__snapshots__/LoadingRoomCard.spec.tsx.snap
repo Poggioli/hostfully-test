@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingRoomCard GIVEN a LoadingRoomCard
+      WHEN render
+      THEN should render all props the right way 1`] = `
+<body>
+  <div>
+    <div
+      class="rounded-xl border bg-card text-card-foreground shadow w-full"
+    >
+      <div
+        class="animate-pulse rounded-md bg-primary/10 h-[200px] w-full"
+      />
+      <div
+        class="p-3 flex flex-col gap-4"
+      >
+        <div
+          class="animate-pulse rounded-md bg-primary/10 h-6 w-full max-w-[150px]"
+        />
+        <div
+          class="animate-pulse rounded-md bg-primary/10 h-14 w-full"
+        />
+        <div
+          class="animate-pulse rounded-md bg-primary/10 h-5 w-full max-w-[100px]"
+        />
+        <div
+          class="flex justify-between gap-4"
+        >
+          <div
+            class="animate-pulse rounded-md bg-primary/10 h-9 w-full max-w-[100px]"
+          />
+          <div
+            class="animate-pulse rounded-md bg-primary/10 h-9 w-full max-w-[100px]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

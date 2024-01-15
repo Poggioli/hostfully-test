@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoomCard GIVEN a RoomCard
+      WHEN render
+      THEN should render all props the right way 1`] = `
+<body>
+  <div>
+    <div
+      class="rounded-xl border bg-card text-card-foreground shadow w-full"
+    >
+      <div
+        data-radix-aspect-ratio-wrapper=""
+        style="position: relative; width: 100%; padding-bottom: 56.25%;"
+      >
+        <div
+          class="rounded-t-md overflow-hidden"
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"
+        >
+          <img
+            alt="Photo of room name 1"
+            class="rounded object-cover w-full h-full"
+            loading="lazy"
+            src=""
+          />
+        </div>
+      </div>
+      <div
+        class="space-y-1.5 p-6 flex flex-col gap-4 pb-3"
+      >
+        <h3
+          class="font-semibold leading-none tracking-tight"
+        >
+          room name 1
+        </h3>
+        <p
+          class="text-sm text-muted-foreground line-clamp-3"
+        >
+          room description 1
+        </p>
+      </div>
+      <div
+        class="p-6 pt-0 flex justify-end pb-4"
+      >
+        <span>
+          <span
+            class="text-sm font-bold"
+          >
+            $
+            350
+          </span>
+           
+          night
+        </span>
+      </div>
+      <div
+        class="items-center p-6 pt-0 flex justify-end"
+      >
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2"
+        >
+          Reserve
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
