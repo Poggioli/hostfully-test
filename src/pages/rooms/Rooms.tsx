@@ -27,10 +27,13 @@ const Rooms: FC = () => {
 
   return !isError ? (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
-      {!isLoading && !isError && rooms.length ? (
+      {!isLoading && rooms.length ? (
         <>
           {rooms.map((room) => <RoomCard key={room.id} {...room} />)}
         </>
+      ) : null}
+      {!isLoading && !rooms.length ? (
+        <h1>Ops, we don't have rooms available at this moment...</h1>
       ) : null}
       {isLoading ? (
         <>
