@@ -139,12 +139,12 @@ exports[`BookingDrawer GIVEN a Drawer open
           style="position: relative; width: 100%; padding-bottom: 56.25%;"
         >
           <div
-            class="overflow-hidden mb-4 rounded-t-md"
+            class="overflow-hidden mb-4 rounded-md"
             style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"
           >
             <img
               alt="Photo of name room 1"
-              class="rounded-t-md object-cover w-full h-full"
+              class="object-cover w-full h-full"
               loading="lazy"
             />
           </div>
@@ -157,12 +157,12 @@ exports[`BookingDrawer GIVEN a Drawer open
             style="position: relative; width: 100%; padding-bottom: 56.25%;"
           >
             <div
-              class="overflow-hidden mb-4 rounded-t-md"
+              class="overflow-hidden mb-4 rounded-md"
               style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"
             >
               <img
                 alt="Photo of name room 1"
-                class="rounded-t-md object-cover w-full h-full"
+                class="object-cover w-full h-full"
                 loading="lazy"
               />
             </div>

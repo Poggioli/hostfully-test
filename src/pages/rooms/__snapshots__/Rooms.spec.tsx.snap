@@ -538,7 +538,7 @@ exports[`Rooms GIVEN a Rooms component
           </div>
         </div>
         <div
-          class="space-y-1.5 p-6 flex flex-col gap-4 pb-3"
+          class="space-y-1.5 p-6 flex flex-col pb-3"
         >
           <h3
             class="font-semibold leading-none tracking-tight"

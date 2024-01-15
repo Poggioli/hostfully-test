@@ -35,12 +35,12 @@ const BookingDrawer: FC = () => {
           {!room ? <BookingDrawerError onClose={onClose} /> : (
             <>
               <DrawerHeader className="md:max-w-[300px] md:w-full md:h-fit">
-                <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-t-md">
-                  <img className="rounded-t-md object-cover w-full h-full" src={room.photos[0]} loading="lazy" alt={`Photo of ${room.name}`} />
+                <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-md">
+                  <img className="object-cover w-full h-full" src={room.photos[0]} loading="lazy" alt={`Photo of ${room.name}`} />
                 </AspectRatio>
                 <div className="hidden md:block">
-                  <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-t-md">
-                    <img className="rounded-t-md object-cover w-full h-full" src={room.photos[1]} loading="lazy" alt={`Photo of ${room.name}`} />
+                  <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-md">
+                    <img className="object-cover w-full h-full" src={room.photos[1]} loading="lazy" alt={`Photo of ${room.name}`} />
                   </AspectRatio>
                 </div>
                 <DrawerTitle className="text-left">{room.name}</DrawerTitle>
