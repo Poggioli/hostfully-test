@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutInfo GIVEN a CheckoutInfo
+      WHEN render
+      THEN should render the props the right way 1`] = `
+<body>
+  <div>
+    <div
+      class="flex flex-col gap-4 mt-4"
+    >
+      <h4
+        class="text-xl font-semibold tracking-tight"
+      >
+        Booking informations
+      </h4>
+      <div
+        class="flex gap-6 justify-between"
+      >
+        <span
+          class="underline"
+        >
+          $
+          500
+           x 
+          5
+           nights
+        </span>
+        <span>
+          $
+          2500
+        </span>
+      </div>
+      <div
+        class="flex gap-6 justify-between"
+      >
+        <span
+          class="underline"
+        >
+          $
+          100
+           x 
+          3
+           guests
+        </span>
+        <span>
+          $
+          300
+        </span>
+      </div>
+      <div
+        class="shrink-0 bg-border h-[1px] w-full max-w-[200px] mx-auto"
+        data-orientation="horizontal"
+        role="none"
+      />
+      <div
+        class="flex gap-6 justify-between"
+      >
+        <span
+          class="text-lg font-semibold"
+        >
+          Total
+        </span>
+        <span
+          class="text-lg font-bold"
+        >
+          $
+          2800
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
