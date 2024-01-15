@@ -8,6 +8,7 @@ module.exports = {
   collectCoverageFrom: [
     "<rootDir>/src/**/*.(ts|tsx)"
   ],
+  setupFilesAfterEnv: ['./setup-jest.ts'],
   coveragePathIgnorePatterns: [
     "node_modules",
     "index.ts",
