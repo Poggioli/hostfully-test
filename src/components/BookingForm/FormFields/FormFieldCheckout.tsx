@@ -4,7 +4,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
+import { addDays, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { FC, useMemo } from "react";
 import { useFormContext } from "react-hook-form";
@@ -23,7 +23,7 @@ const FormFieldCheckout: FC<FormFieldCheckoutProps> = ({ unavailableDates }) => 
 
   const minDate = useMemo(() => {
     const checkin: Date = watch('checkIn') || new Date();
-    const minCheckout = new Date(checkin.getFullYear(), checkin.getMonth(), checkin.getDate() + 1);
+    const minCheckout =  addDays(checkin, 1);
     return minCheckout
   }, [watch('checkIn')])
 

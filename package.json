@@ -9,6 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest --coverage",
+    "test:silent": "jest --coverage --silent",
     "start:db": "json-server --watch db.json --port 3000"
   },
   "dependencies": {

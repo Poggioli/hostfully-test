@@ -33,7 +33,9 @@ const bookingSchema = z
       .date({
         required_error: "This field is required",
       })
-      .min(MIN_CHECKOUT),
+      .min(MIN_CHECKOUT, {
+        message: "Check-out should start at least tomorrow",
+      }),
     quantityGuests: z
       .number({
         required_error: "This field is required",
@@ -68,8 +70,8 @@ export type BookingSchema = z.infer<typeof bookingSchema>;
 type UseBookingFormProps = {
   room: Room;
   booking?: BookingSchema & {
-    id: string
-  }
+    id: string;
+  };
 };
 
 export const useBookingForm = ({ room, booking }: UseBookingFormProps) => {
@@ -82,20 +84,23 @@ export const useBookingForm = ({ room, booking }: UseBookingFormProps) => {
   const form = useForm<BookingSchema>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
-      ...(booking && ({
+      ...(booking && {
         ...booking,
         checkIn: new Date(booking.checkIn),
-        checkOut: new Date(booking.checkOut)
-      }))
-    }
+        checkOut: new Date(booking.checkOut),
+      }),
+    },
   });
 
   const unavailableDates: Date[] = bookings.reduce(
     (prev: Date[], curr: Booking) => {
-      const datesInInterval = curr.id !== booking?.id ? eachDayOfInterval({
-        start: curr.checkIn,
-        end: curr.checkOut,
-      }) : [];
+      const datesInInterval =
+        curr.id !== booking?.id
+          ? eachDayOfInterval({
+              start: curr.checkIn,
+              end: curr.checkOut,
+            })
+          : [];
       return [...prev, ...datesInInterval];
     },
     []
@@ -122,13 +127,25 @@ export const useBookingForm = ({ room, booking }: UseBookingFormProps) => {
   }, [totalPriceDay, totalPriceGuest]);
 
   const onSubmit = (data: BookingSchema) => {
-    const isOverlapping = bookings.some((b) =>
-      b.id !== booking?.id ? areIntervalsOverlapping(
-        { start: data.checkIn, end: data.checkOut },
-        { start: b.checkIn, end: b.checkOut },
-        { inclusive: true }
-      ) : false
-    );
+    const isOverlapping = bookings.some((b) => {
+      const dataCheckIn = data.checkIn;
+      const bCheckIn = b.checkIn;
+      const dataCheckOut = data.checkOut;
+      const bCheckOut = b.checkOut;
+
+      dataCheckIn.setHours(0, 0, 0, 0);
+      bCheckIn.setHours(0, 0, 0, 0);
+      dataCheckOut.setHours(0, 0, 0, 0);
+      bCheckOut.setHours(0, 0, 0, 0);
+
+      return b.id !== booking?.id
+        ? areIntervalsOverlapping(
+            { start: dataCheckIn, end: dataCheckOut },
+            { start: bCheckIn, end: bCheckOut },
+            { inclusive: true }
+          )
+        : false;
+    });
 
     if (isOverlapping) {
       form.setError("root", {
