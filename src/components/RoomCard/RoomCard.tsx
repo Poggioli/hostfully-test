@@ -22,7 +22,7 @@ const RoomCard: FC<RoomCardProps> = ({ name, description, pricePerDay, photos, i
           loading="lazy"
           src={photos[0]}
           alt={`Photo of ${name}`}
-          className="rounded object-cover w-full h-full"
+          className="rounded-t-md object-cover w-full h-full"
         />
       </AspectRatio>
       <CardHeader className="flex flex-col gap-4 pb-3">

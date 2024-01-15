@@ -33,7 +33,7 @@ const BookingCard: FC<BookingCardProps> = ({
     <Card className="w-full">
       {photos?.length ? (
         <AspectRatio ratio={16 / 9} className="overflow-hidden mb-4 rounded-t-md">
-          <img className="rounded-md object-cover w-full h-full" src={photos[0]} loading="lazy" alt={`Photo of ${roomName}`} />
+          <img className="rounded-t-md object-cover w-full h-full" src={photos[0]} loading="lazy" alt={`Photo of ${roomName}`} />
         </AspectRatio>
       ) : null}
       <CardHeader className={`flex flex-col pb-3 ${photos?.length ? 'pt-0' : ''}`}>

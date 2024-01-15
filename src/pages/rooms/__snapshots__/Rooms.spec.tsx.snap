@@ -531,7 +531,7 @@ exports[`Rooms GIVEN a Rooms component
           >
             <img
               alt="Photo of name rom 1"
-              class="rounded object-cover w-full h-full"
+              class="rounded-t-md object-cover w-full h-full"
               loading="lazy"
               src=""
             />

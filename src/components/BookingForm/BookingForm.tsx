@@ -5,7 +5,8 @@ import { Booking } from "@/service/Booking";
 import { Room } from "@/service/Room";
 import { FC } from "react";
 import { CheckoutInfo } from "./CheckoutInfo";
-import { FormFieldCheckin, FormFieldCheckout, FormFieldQuantityGuests } from "./FormFields";
+import { FormFieldQuantityGuests } from "./FormFields";
+import { FormFieldDateRange } from "./FormFields/FormFieldDateRange";
 import { useBookingForm } from "./useBookingForm";
 
 type BookingFormProps = {
@@ -29,8 +30,9 @@ const BookingForm: FC<BookingFormProps> = ({ room, booking }) => {
     <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
-          <FormFieldCheckin unavailableDates={unavailableDates} />
-          <FormFieldCheckout unavailableDates={unavailableDates} />
+          {/* <FormFieldCheckin unavailableDates={unavailableDates} />
+          <FormFieldCheckout unavailableDates={unavailableDates} /> */}
+          <FormFieldDateRange unavailableDates={unavailableDates} />
           <FormFieldQuantityGuests />
           {form.formState.errors.root ? (
             <FormMessage>{form.formState.errors.root.message}</FormMessage>

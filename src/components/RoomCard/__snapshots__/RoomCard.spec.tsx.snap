@@ -18,7 +18,7 @@ exports[`RoomCard GIVEN a RoomCard
         >
           <img
             alt="Photo of room name 1"
-            class="rounded object-cover w-full h-full"
+            class="rounded-t-md object-cover w-full h-full"
             loading="lazy"
             src=""
           />

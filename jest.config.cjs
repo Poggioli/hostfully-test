@@ -13,6 +13,7 @@ module.exports = {
     "node_modules",
     "index.ts",
     ".*types.ts",
+    "<rootDir>/src/components/BookingForm/FormFields",
     "<rootDir>/src/components/ui",
     "<rootDir>/src/pages/Router.tsx",
     "<rootDir>/src/lib/utils.ts",

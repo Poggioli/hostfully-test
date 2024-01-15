@@ -139,7 +139,7 @@ exports[`BookingCard GIVEN a BookingCard
         >
           <img
             alt="Photo of room name 1"
-            class="rounded-md object-cover w-full h-full"
+            class="rounded-t-md object-cover w-full h-full"
             loading="lazy"
             src=""
           />
