@@ -14,6 +14,7 @@ module.exports = {
     "index.ts",
     ".*types.ts",
     "<rootDir>/src/components/ui",
+    "<rootDir>/src/pages/Router.tsx",
     "<rootDir>/src/lib/utils.ts",
     "<rootDir>/src/service/api.ts",
     "<rootDir>/src/main.tsx",
