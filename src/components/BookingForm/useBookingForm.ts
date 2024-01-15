@@ -128,10 +128,11 @@ export const useBookingForm = ({ room, booking }: UseBookingFormProps) => {
 
   const onSubmit = (data: BookingSchema) => {
     const isOverlapping = bookings.some((b) => {
-      const dataCheckIn = data.checkIn;
-      const bCheckIn = b.checkIn;
-      const dataCheckOut = data.checkOut;
-      const bCheckOut = b.checkOut;
+
+      const dataCheckIn = new Date(data.checkIn);
+      const bCheckIn = new Date(b.checkIn);
+      const dataCheckOut = new Date(data.checkOut);
+      const bCheckOut = new Date(b.checkOut);
 
       dataCheckIn.setHours(0, 0, 0, 0);
       bCheckIn.setHours(0, 0, 0, 0);

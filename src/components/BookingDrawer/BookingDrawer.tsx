@@ -28,14 +28,8 @@ const BookingDrawerError: FC<BookingDrawerErrorProps> = ({ onClose }) => {
 const BookingDrawer: FC = () => {
   const { onClose, room, openBookingModal, booking } = useBookingDrawer();
 
-  const onCloseInOnOpenChange = (value: boolean) => {
-    if (!value) {
-      onClose()
-    }
-  }
-
   return (
-    <Drawer open={!!openBookingModal} onOpenChange={onCloseInOnOpenChange}>
+    <Drawer open={!!openBookingModal}>
       <DrawerContent>
         <div className="mx-auto max-w-[400px] max-h-[100vh] overflow-y-auto md:w-full md:max-w-[640px] md:overflow-hidden md:flex md:pt-8 md:items-top md:justify-center">
           {!room ? <BookingDrawerError onClose={onClose} /> : (
