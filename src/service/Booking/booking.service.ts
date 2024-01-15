@@ -41,25 +41,29 @@ export function useDeleteBooking(options?: any) {
     {
       onMutate: async (id: string) => {
         await queryClient.cancelQueries({ queryKey: keys.deleteBookings });
-        const previousBookings = queryClient.getQueryData(keys.getBookings);
+        const previousBookings = queryClient.getQueryData<Booking[]>(
+          keys.getBookings
+        ) as Booking[];
         deleteBooking(id);
-        return { previousBookings };
+        return {
+          previousBooking: previousBookings.find((b) => b.id === id),
+        };
       },
       onError: (err, variables, context: any) => {
-        const booking: Booking = context.previousBookings as Booking;
+        const booking: Booking = context.previousBooking as Booking;
         addBooking(booking);
-        toast.error('Error to edit', {
+        toast.error("Error to edit", {
           description: `Ops, something went wrong...`,
           action: {
             label: "OK",
-            onClick: () => { },
+            onClick: () => {},
           },
-        })
+        });
       },
-      onSuccess(data, variables, context) {
-        toast.success('Booking deleted', {
-          description: 'Your booking was deleted.'
-        })
+      onSuccess() {
+        toast.success("Booking deleted", {
+          description: "Your booking was deleted.",
+        });
       },
       onSettled: () => {
         queryClient.invalidateQueries({ queryKey: keys.getBookings });
@@ -93,18 +97,21 @@ export function useEditBooking(options?: any) {
       onError: (err, variables, context: any) => {
         const booking: Booking = context.previousBooking as Booking;
         editBooking(booking);
-        toast.error('Error to edit', {
+        toast.error("Error to edit", {
           description: `Ops, something went wrong...`,
           action: {
             label: "OK",
-            onClick: () => { },
-          }
-        })
+            onClick: () => {},
+          },
+        });
       },
-      onSuccess(data, variables, context) {
-        toast.success('Booking edited', {
-          description: `Your booking is to ${format(data.checkIn, "PPP")} - ${format(data.checkOut, "PPP")}.`
-        })
+      onSuccess(data) {
+        toast.success("Booking edited", {
+          description: `Your booking is to ${format(
+            data.checkIn,
+            "PPP"
+          )} - ${format(data.checkOut, "PPP")}.`,
+        });
       },
       onSettled: () => {
         queryClient.invalidateQueries({ queryKey: keys.getBookings });
@@ -121,7 +128,7 @@ export function usePostBooking(options?: any) {
   return useMutation(
     keys.postBookings,
     async (booking: Booking) => {
-      const res = await axiosClient.post<Booking>(`/bookings`, booking);
+      const res = await axiosClient.post<Booking>("/bookings", booking);
       return res.data;
     },
     {
@@ -131,23 +138,28 @@ export function usePostBooking(options?: any) {
           keys.getBookings
         ) as Booking[];
         addBooking(booking);
-        return { previousBookings };
+        return {
+          previousBooking: previousBookings.find((b) => b.id === booking.id),
+        };
       },
       onError: (err, variables, context: any) => {
         const booking: Booking = context.previousBooking as Booking;
         deleteBooking(booking.id);
-        toast.error('Error to create', {
+        toast.error("Error to create", {
           description: `Ops, something went wrong...`,
           action: {
             label: "OK",
-            onClick: () => { },
-          }
-        })
+            onClick: () => {},
+          },
+        });
       },
-      onSuccess: (data, variables, context) => {
-        toast.success('Booking created', {
-          description: `Your booking is to ${format(data.checkIn, "PPP")} - ${format(data.checkOut, "PPP")}`
-        })
+      onSuccess: (data) => {
+        toast.success("Booking created", {
+          description: `Your booking is to ${format(
+            data.checkIn,
+            "PPP"
+          )} - ${format(data.checkOut, "PPP")}.`,
+        });
       },
       onSettled: () => {
         queryClient.invalidateQueries({ queryKey: keys.getBookings });
