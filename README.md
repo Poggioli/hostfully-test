@@ -1,52 +1,71 @@
-# Hostfully test
+# Booking Accommodation System
 
+This project implements the basic operations for booking accommodations, including creating, listing, editing, and deleting bookings. It incorporates validations during both creation and editing, such as checking for existing bookings in the selected time interval and ensuring the booking lasts at least 1 day.
 
-This project has the four basic operations for booking accommodation: creating a booking, listing, editing, and deleting. It includes validations at both the creation and editing moments, such as:
+## Features
 
-- Checking for no existing booking in the selected time interval.
-- Verifying that the booking lasts at least 1 day.
-- Ensuring that the check-out date is after the check-in date.
-- Confirming that the booking is made for future dates.
-
-The application consists of two pages: the "Rooms" page, where you can view the list of available accommodations, and the "Bookings" page, where you can see all your booking, edit, and cancel them.
+- View a list of available accommodations on the "Rooms" page.
+- Manage your bookings on the "Bookings" page, including editing and canceling.
 
 ## Development
 
-This project was developed using:
-- `node v18.13.0`
-- `yarn`
-- `shadcn`
-- `vite`
-- `tailwindcss`
+This project was developed using the following technologies:
+
+- Node.js v18.13.0
+- Yarn
+- Shadcn for UI development
+- Vite for project scaffolding
+- Tailwind CSS for styling
 
 ## Tools
 
-I use the [`shadcn`](https://ui.shadcn.com/) + [`tailwindcss`](https://tailwindcss.com/) to develop the interface and [`json-server`](https://www.npmjs.com/package/json-server) to mock an API response.
+I utilized the following tools:
 
-## Run
+- [Shadcn](https://ui.shadcn.com/) + [Tailwind CSS](https://tailwindcss.com/) for the UI.
+- [json-server](https://www.npmjs.com/package/json-server) to mock API responses.
 
-To run this project you should install all dependencies
+## Getting Started
+
+### Requirements
+
+Make sure you have the following installed:
+
+- Node.js v18.13.0
+- Yarn
+
+### Installation
+
+Install project dependencies:
 
 ```bash
-yarn 
+yarn
 ```
 
-Run the website project
-```bash
-yarn run dev
-```
+Run the json-server:
 
-Run the json-server
 ```bash
 yarn run start:db
 ```
 
-Now you could access the [`http://localhost:5173`](http://localhost:5173/rooms) and use the app.
+Run the website project:
+
+```bash
+yarn run dev
+```
+
+Access the app at [http://localhost:5173](http://localhost:5173)
+
+
+## Usage
+
+- Explore available accommodations on the "Rooms" page.
+- Manage your bookings on the "Bookings" page.
+- Edit or cancel existing bookings.
 
 ## Tests
 
-To see tests result, you should run the following command
+To run tests, use the following command:
 
 ```bash
-yarn test
+yarn test:silent
 ```
