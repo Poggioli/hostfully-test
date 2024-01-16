@@ -185,7 +185,7 @@ exports[`BookingForm GIVEN a BookingForm
           type="button"
         >
           <span>
-            Pick a date
+            Pick check-in and check-out
           </span>
           <svg
             class="lucide lucide-calendar ml-2 h-4 w-4"

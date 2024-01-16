@@ -64,7 +64,7 @@ const FormFieldDateRange: FC<FormFieldDateRangeProps> = ({ unavailableDates }) =
                 format(date.from, "LLL dd, y")
               )
             ) : (
-              <span>Pick a date</span>
+              <span>Pick check-in and check-out</span>
             )}
             <CalendarIcon className="ml-2 h-4 w-4" />
           </Button>
